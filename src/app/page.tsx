@@ -1,8 +1,16 @@
-import React from 'react'
+'use client'
+import Navbar from '@/components/Navbar'
+import About from '@/Features/Homepage/About'
+import HeroSection from '@/Features/Homepage/HeroSection'
+import React, { useState } from 'react'
 
 const page = () => {
   return (
-    <div className='bg-green-400 text-7xl  h-screen w-full'>Helo world</div>
+    <div className=' w-full bg-white'>
+      <Navbar />
+      <HeroSection />
+      <About />
+    </div>
   )
 }
 
