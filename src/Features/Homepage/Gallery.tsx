@@ -49,7 +49,9 @@ const Gallery = () => {
                     <h1 className='text-4xl'>LIBURAN KE <br/> TAWANGMANGU</h1>
                     <Image src={"/sourceImg/g2.jpg"} alt='g2' width={600} height={250} className='rounded-[50px]'/>
                 </div>
-
+            </div>
+            <div className=''>
+                <Image src={"/sourceImg/g3.jpg"} alt='g3' width={600} height={250}/>
             </div>
         </div>
     </div>
