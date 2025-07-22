@@ -4,7 +4,7 @@ import React from 'react'
 
 const About = () => {
     return (
-        <div className=' bg-black'>
+        <section className=' bg-black'>
             <div className='w-full px-20 grid grid-cols-2 pt-40  text-white'>
                 <div className=' flex flex-col  gap-20 '>
                     <div className='w-6/12  rotate-3 scale-110'>
@@ -64,10 +64,56 @@ const About = () => {
             <div className='h-60 bg-white w-full pt-20'>
 
             </div>
-            <div className='h-screen'>
+            <div className='w-full  border-white px-20 pt-40'>
+                <div className='flex justify-center mx-auto gap-3'>
+                    <div className='flex items-start relative -top-10'>
+                        <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
+                    </div>
+                    <h1 className='text-8xl text-center'>STRUKTUR <br />ORGANISASI</h1>
+                    <div className='flex items-end relative -bottom-10'>
+                        <Image src={"/Star 3.png"} alt='star 3' className='object-contain' width={120} height={120} />
+                    </div>
+                </div>
 
+                <div className='flex px-20 justify-between mt-20 items-end'>
+                    <div className='flex gap-5 text-[#00FFAD]'>
+                        <div className='h-[28rem] w-10 bg-[#00FFAD]'> </div>
+                        <div>
+                            <h1>KETUA</h1>
+                            <GoArrowUpRight />
+                        </div>
+                    </div>
+                    <div className='flex gap-5 text-white'>
+                        <div className='h-[24rem] w-10 bg-white'> </div>
+                        <div>
+                            <h1>WAKIL KETUA</h1>
+                            <GoArrowUpRight />
+                        </div>
+                    </div>
+                    <div className='flex gap-5 text-white'>
+                        <div className='h-[20rem] w-10 bg-white'> </div>
+                        <div>
+                            <h1>SEKERTARIS</h1>
+                            <GoArrowUpRight />
+                        </div>
+                    </div>
+                    <div className='flex gap-5 text-white'>
+                        <div className='h-[16rem] w-10 bg-white'> </div>
+                        <div>
+                            <h1>BENDAHARA</h1>
+                            <GoArrowUpRight />
+                        </div>
+                    </div>
+                    <div className='flex gap-5 text-white'>
+                        <div className='h-[12rem] w-10 bg-white'> </div>
+                        <div>
+                            <h1>HUMAS</h1>
+                            <GoArrowUpRight />
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     )
 }
 
