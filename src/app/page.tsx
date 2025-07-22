@@ -2,6 +2,7 @@
 import Navbar from '@/components/Navbar'
 import About from '@/Features/Homepage/About'
 import HeroSection from '@/Features/Homepage/HeroSection'
+import Portfolio from '@/Features/Homepage/Portfolio'
 import React, { useState } from 'react'
 
 const page = () => {
@@ -10,6 +11,7 @@ const page = () => {
       <Navbar />
       <HeroSection />
       <About />
+      <Portfolio />
     </div>
   )
 }
