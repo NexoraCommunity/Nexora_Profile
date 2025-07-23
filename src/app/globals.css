@@ -21,3 +21,42 @@ body {
   color: var(--foreground);
   font-family: "Coolvetica", sans-serif;
 }
+
+
+.swiper {
+  width: 600px;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.swiper-slide-active {
+  position: relative;
+  top: -90px !important; 
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #fff;
+  background-color: #00FFAD;
+  border-radius: 50%;
+  padding: 40px;
+}
+
+.swiper-button-next {
+  right: -200px !important;
+}
+
+.swiper-button-prev {
+  left: -200px !important;
+}
