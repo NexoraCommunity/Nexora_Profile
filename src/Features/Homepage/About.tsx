@@ -6,7 +6,7 @@ const About = () => {
     return (
         <section className=' bg-black'>
             <div className='w-full px-20 grid grid-cols-2 pt-40  text-white'>
-                <div className=' flex flex-col  gap-20 '>
+                <div className=' flex flex-col  gap-10 '>
                     <div className='w-6/12  rotate-3 scale-110'>
                         <div className='w-full text-3xl h-20 flex justify-center items-center rounded-xl bg-[#00FFAD]'>Tentang Kami</div>
                         <div className="-rotate-6 -translate-y-2 w-0 h-0 float-right mr-10 border-l-[50px] border-r-[0px] border-t-[65px] border-l-transparent border-r-transparent border-t-[#00FFAD]"></div>
@@ -47,7 +47,7 @@ const About = () => {
                         </div>
                         <p className='text-4xl text-justify mt-3'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nobis nostrum vitae dolorem praesentium placeat totam quia incidunt inventore consequatur! Deserunt vitae eveniet aliquam? Iusto dignissimos ullam ea quaerat natus.</p>
                     </div>
-                    <div className='flex-grow w-1/2 px-20 relative h-[486px]'>
+                    <div className='flex-grow w-1/2 px-20 relative h-[486px] mr-8 rounded'>
                         <Image src={"/nexoraff.png"} alt='img' className='object-cover' fill />
                     </div>
                 </div>

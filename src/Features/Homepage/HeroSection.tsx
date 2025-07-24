@@ -10,7 +10,7 @@ const HeroSection = () => {
             </div>
             <div className='absolute top-0 h-full w-full z-30 flex justify-center items-center'>
                 <Image alt='hero-img' className='object-cover brightness-75' fill src={"/hero.avif"} />
-                <h1 className='relative z-50 text-8xl text-white'>Lorem ipsum dolor sit amet <br /> <span className='text-[#00FFAD]'>consectetur</span> adipisicing <span className='text-[#00FFAD]'>elit</span></h1>
+                <h1 className='relative z-50 xl:text-8xl text-6xl text-center mx-10 text-white'>Lorem ipsum dolor sit amet <br /> <span className='text-[#00FFAD]'>consectetur</span> adipisicing <span className='text-[#00FFAD]'>elit</span></h1>
             </div>
         </div>
     )
