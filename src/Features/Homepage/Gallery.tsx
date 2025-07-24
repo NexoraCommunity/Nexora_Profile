@@ -6,9 +6,17 @@ const Gallery = () => {
   return (
     <div className="bg-black">
       {/* Gallery 1 */}
-      <div className="text-white px-20 p-16">
-        <div className="grid grid-cols-2 place-items-center gap-12">
-          <div className="relative w-96 h-72">
+      <div className="text-white px-4 sm:px-10 md:px-20 py-8 md:py-16 flex flex-col gap-8">
+        
+        <div className="order-1 md:order-2">
+          <div className="text-4xl flex justify-center items-center">
+            <h1 className="mx-4">CODING FEST 2025</h1>
+            <FaArrowRight className="text-3xl" />
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-8 order-2 md:order-1">
+          <div className="relative w-72 h-52 sm:w-96 sm:h-72">
             <Image
               src={"/sourceImg/g1.jpg"}
               alt="g1"
@@ -17,7 +25,7 @@ const Gallery = () => {
             />
           </div>
 
-          <div className="relative w-96 h-72">
+          <div className="relative w-72 h-52 sm:w-96 sm:h-72">
             <Image
               src={"/sourceImg/g1.jpg"}
               alt="g1"
@@ -27,13 +35,8 @@ const Gallery = () => {
           </div>
         </div>
 
-        <div className="text-4xl flex justify-center items-center">
-          <h1 className="mx-24">CODING FEST 2025</h1>
-          <FaArrowRight className="text-3xl" />
-        </div>
-
-        <div className="grid grid-cols-2 place-items-center gap-12">
-          <div className="relative w-96 h-72 translate-y-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 place-items-center gap-8 order-3">
+          <div className="relative w-72 h-52 sm:w-96 sm:h-72 translate-y-2 sm:translate-y-4">
             <Image
               src={"/sourceImg/g1.jpg"}
               alt="g1"
@@ -42,7 +45,7 @@ const Gallery = () => {
             />
           </div>
 
-          <div className="relative w-96 h-72 -translate-y-4">
+          <div className="relative w-72 h-52 sm:w-96 sm:h-72 -translate-y-2 sm:-translate-y-4">
             <Image
               src={"/sourceImg/g1.jpg"}
               alt="g1"
@@ -55,19 +58,14 @@ const Gallery = () => {
 
       {/* Gallery 2 */}
       <div>
-        <div className="flex text-center">
-          <div className="w-full p-4 text-black text-2xl bg-white">
-            NEXORA MEMORIES
-          </div>
-          <div className="w-full p-4 text-black text-2xl bg-[#56DFCF]">
-            NEXORA MEMORIES
-          </div>
-          <div className="w-full p-4 text-black text-2xl bg-white">
-            NEXORA MEMORIES
-          </div>
+        <div className="flex text-center sm:text-2xl text-black">
+          <div className="w-full p-4 bg-white">NEXORA MEMORIES</div>
+          <div className="w-full p-4 bg-[#56DFCF]">NEXORA MEMORIES</div>
+          <div className="w-full p-4 bg-white">NEXORA MEMORIES</div>
         </div>
+
         <div className="text-white px-20">
-          <div className="rounded-2xl flex pt-16">
+          <div className="rounded-2xl flex max-md:flex-col max-md:text-center justify-between pt-16">
             <Image
               src={"/sourceImg/g2.jpg"}
               alt="g2"
@@ -75,15 +73,21 @@ const Gallery = () => {
               height={250}
               className="rounded-[50px]"
             />
-            <h1 className="text-4xl mx-12">
-              LIBURAN KE <br /> TAWANGMANGU
-            </h1>
+            <div>
+              <h1 className="sm:text-2xl md:text-4xl">
+              LIBURAN KE <br className="max-md:hidden"/> TAWANGMANGU
+              </h1>
+            </div>
+            
           </div>
 
-          <div className="rounded-2xl flex justify-between py-10">
-            <h1 className="text-4xl">
-              LIBURAN KE <br /> TAWANGMANGU
-            </h1>
+          <div className="rounded-2xl flex max-md:flex-col max-md:text-center justify-between py-10">
+            <div className="max-md:order-2">
+              <h1 className="sm:text-2xl md:text-4xl">
+              LIBURAN KE <br className="max-md:hidden"/> TAWANGMANGU
+              </h1>
+            </div>
+            
             <Image
               src={"/sourceImg/g2.jpg"}
               alt="g2"
@@ -92,40 +96,37 @@ const Gallery = () => {
               className="rounded-[50px]"
             />
           </div>
+
         </div>
 
         <div className="relative w-full my-36 px-20 overflow-x-clip">
           <Swipper />
         </div>
-        </div>
+      </div>
 
-        {/* Gallery 3 */}
-        <div className="px-20">
-            <div className="text-white grid place-items-center py-12">
-                <h1 className="text-5xl text-center pb-12">
-                    KELUARGA BESAR <br /> NEXORA
-                </h1>
-                <Image
-                    src={"/sourceImg/g4.jpg"}
-                    alt="g4"
-                    width={1000}
-                    height={500}
-                    className="rounded-[30px]"
-                />
-            </div>
-            <div className="text-white">
-                <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
-            </div>
-            <div className="flex justify-around items-center py-20">
-                <h1 className="text-4xl">UNDUH BINGKAI</h1>
-                <div className="w-96 h-96 bg-white">
-                </div>
-            </div>
+      {/* Gallery 3 */}
+      <div className="px-20">
+        <div className="text-white grid place-items-center py-12">
+          <h1 className="text-5xl text-center pb-12">
+            KELUARGA BESAR <br /> NEXORA
+          </h1>
+          <Image
+            src={"/sourceImg/g4.jpg"}
+            alt="g4"
+            width={1000}
+            height={500}
+            className="rounded-[30px]"
+          />
         </div>
-        <div>
-            
+        <div className="text-white">
+          <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
         </div>
-        
+        <div className="flex justify-around items-center py-20">
+          <h1 className="text-4xl">UNDUH BINGKAI</h1>
+          <div className="w-96 h-96 bg-white"></div>
+        </div>
+      </div>
+      <div></div>
     </div>
   );
 };
