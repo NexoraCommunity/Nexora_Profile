@@ -1,36 +1,41 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const Navbar = () => {
     const [Toggle, SetToggle] = useState(false)
     return (
-        <nav className='nav fixed flex justify-center w-full py-6'>
-            <div className='w-11/12  top-0  text-white flex justify-between items-center text-3xl mx-auto'>
+        <nav className='nav fixed flex justify-center w-full '>
+            <div className='w-11/12  top-0 py-6  text-white flex justify-between items-center text-3xl mx-auto'>
                 <div className='flex gap-3 items-center w-96 max-lg:hidden'>
-                    <button className='p-2 px-6 bg-white/10 backdrop-blur-lg rounded-3xl'>HOME</button>
-                    <button className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>TENTANG KAMI</button>
+                    <Link href={'#home'} className='p-2 px-6 bg-white/10 backdrop-blur-lg rounded-3xl'>HOME</Link>
+                    <Link href={'#about'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>TENTANG KAMI</Link>
                 </div>
                 <h1>NEXORA<span className='text-[#56DFCF]'>.</span></h1>
                 <div className='flex gap-3 items-center w-96 max-lg:hidden'>
-                    <button className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>FAQ</button>
-                    <button className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>GALLERY</button>
+                    <Link href={'#faq'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>FAQ</Link>
+                    <Link href={'#gallery'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>GALLERY</Link>
                 </div>
             </div>
-            <div className='right-10  w-96 absolute'>
-                <button onClick={() => SetToggle(!Toggle)} className='absolute z-10 right-0'><Image src={"/hamburger.png"} alt='oke' width={50} height={50} /></button>
+            <div className='lg:w-96 right-0 w-full max-lg:top-0  absolute'>
+                <button onClick={() => SetToggle(!Toggle)} className='absolute mt-6 right-10'><Image src={"/hamburger.png"} alt='oke' width={50} height={50} /></button>
 
-                <div className={`bg-black  ${Toggle ? "" : "hidden"} translate-x-5 relative z-0`}>
-                    <button className='w-full border border-white text-4xl py-7'>More</button>
-                    <div className='xl:hidden'>
-                        <button className='w-full border border-white text-4xl py-3'>Home</button>
-                        <button className='w-full border border-white text-4xl py-3'>Tentang Kami</button>
-                        <button className='w-full border border-white text-4xl py-3'>Faq</button>
-                        <button className='w-full border border-white text-4xl py-3'>Gallery</button>
+                <div className={`${Toggle ? "" : "hidden"} max-lg:w-screen w-full bg-black h-auto  lg:pt-6 lg:right-5  absolute top-0 flex flex-col`}>
+                    <div className='w-full border relative flex items-center justify-center border-white text-4xl py-7'>
+                        <h1>More</h1>
+                        <button onClick={() => SetToggle(!Toggle)} className='absolute right-5'><IoIosArrowDown /></button>
                     </div>
-                    <button className='w-full border border-white text-4xl py-3'>Portfolio</button>
-                    <button className='w-full border border-white text-4xl py-3'>Divisi</button>
-                    <button className='w-full border border-white text-4xl py-3'>Kontak Kami</button>
+                    <div className='xl:hidden flex flex-col'>
+                        <Link href={'#homr'} className='w-full border text-center border-white text-xl py-3'>Home</Link>
+                        <Link href={'#about'} className='w-full border text-center border-white text-xl py-3'>Tentang Kami</Link>
+                        <Link href={'#faq'} className='w-full border text-center border-white text-xl py-3'>Faq</Link>
+                        <Link href={'#gallery'} className='w-full border text-center border-white text-xl py-3'>Gallery</Link>
+                    </div>
+                    <Link href={'#portfolio'} className='w-full border text-center border-white text-xl py-3'>Portfolio</Link>
+                    <Link href={'#divisi'} className='w-full border text-center border-white text-xl py-3'>Divisi</Link>
+                    <Link href={'#kontakkami'} className='w-full border text-center border-white text-xl py-3'>Kontak Kami</Link>
                 </div>
 
             </div>

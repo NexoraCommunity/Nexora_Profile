@@ -16,8 +16,8 @@ export default function Swipper() {
   return (
     <>
       <Swiper
-        cardsEffect= {{
-          perSlideOffset : 60,
+        cardsEffect={{
+          perSlideOffset: 60,
           perSlideRotate: 5,
           rotate: false,
           slideShadows: true
@@ -27,22 +27,22 @@ export default function Swipper() {
         grabCursor={true}
         navigation={true}
         modules={[EffectCards, Navigation]}
-        className="mySwiper"
+        className="mySwiper w-[600px] h-[320px]"
       >
         <SwiperSlide>
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill'/>
+          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill' />
         </SwiperSlide>
         <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill'/>
+          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill' />
         </SwiperSlide>
         <SwiperSlide >
-          <Image src={"/sourceImg/g2.jpg"} alt='g2' fill className='object-fill'/>
+          <Image src={"/sourceImg/g2.jpg"} alt='g2' fill className='object-fill' />
         </SwiperSlide>
         <SwiperSlide >
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill'/>
+          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill' />
         </SwiperSlide>
         <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill'/>
+          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill' />
         </SwiperSlide>
       </Swiper>
     </>

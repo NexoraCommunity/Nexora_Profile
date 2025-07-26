@@ -4,7 +4,7 @@ import { FaArrowRight } from "react-icons/fa";
 import Swipper from "@/components/Swipper";
 const Gallery = () => {
   return (
-    <div className="bg-black">
+    <div id="gallery" className="bg-black">
       {/* Gallery 1 */}
       <div className="text-white px-20 p-16">
         <div className="grid grid-cols-2 place-items-center gap-12">
@@ -97,35 +97,35 @@ const Gallery = () => {
         <div className="relative w-full my-36 px-20 overflow-x-clip">
           <Swipper />
         </div>
-        </div>
+      </div>
 
-        {/* Gallery 3 */}
-        <div className="px-20">
-            <div className="text-white grid place-items-center py-12">
-                <h1 className="text-5xl text-center pb-12">
-                    KELUARGA BESAR <br /> NEXORA
-                </h1>
-                <Image
-                    src={"/sourceImg/g4.jpg"}
-                    alt="g4"
-                    width={1000}
-                    height={500}
-                    className="rounded-[30px]"
-                />
-            </div>
-            <div className="text-white">
-                <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
-            </div>
-            <div className="flex justify-around items-center py-20">
-                <h1 className="text-4xl">UNDUH BINGKAI</h1>
-                <div className="w-96 h-96 bg-white">
-                </div>
-            </div>
+      {/* Gallery 3 */}
+      <div className="px-20">
+        <div className="text-white grid place-items-center py-12">
+          <h1 className="text-5xl text-center pb-12">
+            KELUARGA BESAR <br /> NEXORA
+          </h1>
+          <Image
+            src={"/sourceImg/g4.jpg"}
+            alt="g4"
+            width={1000}
+            height={500}
+            className="rounded-[30px]"
+          />
         </div>
-        <div>
-            
+        <div className="text-white">
+          <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
         </div>
-        
+        <div className="flex justify-around items-center py-20">
+          <h1 className="text-4xl">UNDUH BINGKAI</h1>
+          <div className="w-96 h-96 bg-white">
+          </div>
+        </div>
+      </div>
+      <div>
+
+      </div>
+
     </div>
   );
 };
