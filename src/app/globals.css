@@ -49,6 +49,7 @@ body {
   background-color: #00FFAD;
   border-radius: 50%;
   padding: 40px;
+  z-index: 999999 !important;
 }
 
 .swiper-button-next {

@@ -27,7 +27,22 @@ export default function Swipper() {
         grabCursor={true}
         navigation={true}
         modules={[EffectCards, Navigation]}
-        className="mySwiper w-[600px] h-[320px]"
+        className="mySwiper lg:w-[600px] lg:h-[320px] md:w-[450px] md:h-[240px] sm:w-[300px] sm:h-[160px] w-[150px] h-[80px]"
+      >
+        <SwiperSlide>
+          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill />
+        </SwiperSlide>
+        <SwiperSlide >
+          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill />
+        </SwiperSlide>
+        <SwiperSlide >
+          <Image src={"/sourceImg/g2.jpg"} alt='g2' fill />
+        </SwiperSlide>
+        <SwiperSlide >
+          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill />
+        </SwiperSlide>
+        <SwiperSlide >
+          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill />
       >
         <SwiperSlide>
           <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill' />
