@@ -43,22 +43,8 @@ export default function Swipper() {
         </SwiperSlide>
         <SwiperSlide >
           <Image src={"/sourceImg/g4.jpg"} alt='g4' fill />
-      >
-        <SwiperSlide>
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill' />
         </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill' />
-        </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g2.jpg"} alt='g2' fill className='object-fill' />
-        </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill className='object-fill' />
-        </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill className='object-fill' />
-        </SwiperSlide>
+
       </Swiper>
     </>
   );

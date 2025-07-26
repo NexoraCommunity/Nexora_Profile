@@ -7,7 +7,7 @@ const Gallery = () => {
     <div id="gallery" className="bg-black">
       {/* Gallery 1 */}
       <div className="text-white px-4 sm:px-10 md:px-20 py-8 md:py-16 flex flex-col sm:gap-0">
-        
+
         <div className="order-1 md:order-2">
           <div className="text-4xl flex justify-center items-center">
             <h1 className="mx-4">CODING FEST 2025</h1>
@@ -68,37 +68,37 @@ const Gallery = () => {
           <div className=" flex max-md:flex-col max-md:text-center justify-between pt-16">
             <div className="w-full md:w-[60%]">
               <Image
-              src={"/sourceImg/g2.jpg"}
-              alt="g2"
-              width={600}
-              height={250}
-              className="w-full h-auto md:rounded-[50px] rounded-[20px]"
-            />
+                src={"/sourceImg/g2.jpg"}
+                alt="g2"
+                width={600}
+                height={250}
+                className="w-full h-auto md:rounded-[50px] rounded-[20px]"
+              />
             </div>
             <div>
               <h1 className="w-full md:w-[30%] sm:text-2xl md:text-4xl mt-4">
-              LIBURAN KE <br className="max-md:hidden"/>TAWANGMANGU
+                LIBURAN KE <br className="max-md:hidden" />TAWANGMANGU
               </h1>
             </div>
-            
+
           </div>
 
           <div className="rounded-2xl flex max-md:flex-col max-md:text-center justify-between py-10">
             <div className="max-md:order-2">
               <h1 className="w-full md:w-[30%] sm:text-2xl md:text-4xl mt-4">
-              LIBURAN KE <br className="max-md:hidden"/> TAWANGMANGU
+                LIBURAN KE <br className="max-md:hidden" /> TAWANGMANGU
               </h1>
             </div>
             <div className="w-full md:w-[60%]">
               <Image
-              src={"/sourceImg/g2.jpg"}
-              alt="g2"
-              width={600}
-              height={250}
-              className="w-full h-auto md:rounded-[50px] rounded-[20px]"
-            />
+                src={"/sourceImg/g2.jpg"}
+                alt="g2"
+                width={600}
+                height={250}
+                className="w-full h-auto md:rounded-[50px] rounded-[20px]"
+              />
             </div>
-            
+
           </div>
 
         </div>
@@ -137,31 +137,8 @@ const Gallery = () => {
 
       </div>
 
-      <div></div>
 
-      {/* Gallery 3 */}
-      <div className="px-20">
-        <div className="text-white grid place-items-center py-12">
-          <h1 className="text-5xl text-center pb-12">
-            KELUARGA BESAR <br /> NEXORA
-          </h1>
-          <Image
-            src={"/sourceImg/g4.jpg"}
-            alt="g4"
-            width={1000}
-            height={500}
-            className="rounded-[30px]"
-          />
-        </div>
-        <div className="text-white">
-          <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
-        </div>
-        <div className="flex justify-around items-center py-20">
-          <h1 className="text-4xl">UNDUH BINGKAI</h1>
-          <div className="w-96 h-96 bg-white">
-          </div>
-        </div>
-      </div>
+
       <div>
 
       </div>
