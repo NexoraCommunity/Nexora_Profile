@@ -7,12 +7,12 @@ import React, { useState } from 'react'
 
 const page = () => {
   return (
-    <div className=' w-full bg-white text-white'>
+    <div className=' w-full bg-black text-white'>
       <Navbar />
       <HeroSection />
       <About />
-      <Portfolio />
-      <Gallery />
+      {/* <Portfolio />
+      <Gallery /> */}
     </div>
   )
 }
