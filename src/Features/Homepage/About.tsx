@@ -14,7 +14,7 @@ const About = () => {
         <section id='about' className=' bg-black'>
             <WeAre />
             <FilosofiLogo />
-            {/* <StrukturOrganisasi /> */}
+            <StrukturOrganisasi />
         </section>
     )
 }

@@ -52,15 +52,6 @@ const Portfolio = () => {
     };
     return (
         <section className='bg-black  pt-40' id='portfolio'>
-            <div className='flex justify-center px-20 mx-auto gap-3'>
-                <div className='flex items-start relative -top-10'>
-                    <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
-                </div>
-                <h1 className='text-8xl text-center'>PROJECT <br />KAMI</h1>
-                <div className='flex items-end relative -bottom-10'>
-                    <Image src={"/Star 3.png"} alt='star 3' className='object-contain' width={120} height={120} />
-                </div>
-            </div>
             <div className='px-20 pt-40'>
                 <div>
                     <h1 className='text-5xl my-5'>HIGHLIGHT 2024//</h1>
