@@ -11,7 +11,7 @@ const FilosofiLogo = () => {
                     <div className='flex-grow relative h-72'>
                         <Image src={"/filosofilogo.png"} alt='img' className='object-cover' fill />
                     </div>
-                    <ul className='xl:text-4xl md:text-2xl  max-sm:text-2xl text-center text-white flex flex-col gap-8'>
+                    <ul className='xl:text-4xl md:text-2xl  max-sm:text-3xl text-center text-white flex flex-col gap-8'>
                         <li>FILOSOFI LOGO NEXORA</li>
                         <li className='text-[#00FFAD]'>FILOSOFI LOGO NEXORA</li>
                         <li>FILOSOFI LOGO NEXORA</li>
@@ -22,7 +22,7 @@ const FilosofiLogo = () => {
                         <div className='w-full h-full bg-black/80 absolute z-10'></div>
                         <Image src={"/hero.avif"} fill alt='bg' className='object-cover' />
                     </div>
-                    <div className='xl:text-6xl lg:text-4xl md:text-2xl sm:w-1/2  max-sm:text-2xl lg:px-20 md:px-10 px-5 relative z-0 text-white gap-8'>
+                    <div className='xl:text-6xl lg:text-4xl md:text-2xl sm:w-1/2  max-sm:text-3xl lg:px-20 md:px-10 px-5 relative z-0 text-white gap-8'>
                         <h1>NEXORA FOR FUTURE <br /> <span className='text-[#00FFAD]'>GENERATION</span></h1>
                         <div className='flex justify-end border-b-4 border-white w-full'>
                             <GoArrowUpRight />

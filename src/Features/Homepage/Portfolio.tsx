@@ -25,6 +25,7 @@ const Portfolio = () => {
 
     ];
     const hoverRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const imgRefs = useRef<(HTMLDivElement | null)>(null);
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
     const [positionImg, setPositionImg] = useState({ x: 0, y: 0 });
 
@@ -33,12 +34,14 @@ const Portfolio = () => {
         index: number
     ) => {
         const card = hoverRefs.current[index];
-        if (card) {
+
+        if (card && imgRefs.current) {
+
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            const clampedX = Math.min(x, rect.width - 302);
+            const clampedX = Math.min(x, rect.width - (imgRefs.current.clientWidth + 1));
             setPositionImg({
                 x: Math.max(0, clampedX),
                 y: y,
@@ -81,18 +84,23 @@ const Portfolio = () => {
                         >
                             <h1 className={`md:px-20 px-5 border-white duration-300 ${hoverIndex === i ? "md:py-20 py-10" : "md:py-10 py-5 "}`}>{e.title}</h1>
 
-                            <Image
-                                src={e.img}
-                                width={300}
-                                height={400}
-                                alt="hover-img"
+                            <div
                                 style={{
                                     left: `${positionImg.x}px`,
                                     top: `${positionImg.y}px`,
                                 }}
-                                className={`absolute transition-all z-40 duration-1000 -translate-y-10  ease-in-out ${hoverIndex === i ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                                ref={imgRefs}
+                                className={`absolute transition-all md:h-80 md:w-80 w-40 h-40  z-40 duration-1000 -translate-y-10  ease-in-out ${hoverIndex === i ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                                     }`}
-                            />
+                            >
+                                <Image
+                                    src={e.img}
+                                    fill
+                                    alt="hover-img"
+                                    className='object-cover'
+
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
