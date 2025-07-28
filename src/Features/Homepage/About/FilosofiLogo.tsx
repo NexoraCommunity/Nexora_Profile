@@ -7,7 +7,7 @@ const FilosofiLogo = () => {
     return (
         <>
             <div className='py-32'>
-                <div className='flex gap-10 px-20'>
+                <div className='flex max-lg:flex-col gap-10 px-20'>
                     <div className='flex-grow relative h-72'>
                         <Image src={"/filosofilogo.png"} alt='img' className='object-cover' fill />
                     </div>

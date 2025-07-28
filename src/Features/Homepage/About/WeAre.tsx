@@ -23,14 +23,21 @@ const WeAreContent = [
 
 const WeAre = () => {
     const [weAre, setWeAre] = useState<string>("Tentang Kami")
+    const [fadeKey, setFadeKey] = useState(0)
 
     const wrapperRef = useRef<HTMLDivElement | null>(null)
     const contentRefs = useRef<(HTMLDivElement | null)[]>([])
 
+
+    useEffect(() => {
+        setFadeKey(prev => prev + 1)
+    }, [weAre])
+
     useEffect(() => {
         if (!wrapperRef.current) return;
 
-        // Pin section utama
+        let triggers: ScrollTrigger[] = []
+        // Pin utama
         ScrollTrigger.create({
             trigger: wrapperRef.current,
             start: "top top",
@@ -40,41 +47,58 @@ const WeAre = () => {
             markers: false,
         });
 
-        // Scroll triggers per item
-        contentRefs.current.forEach((ref, i) => {
-            if (!ref) return;
+        // Scroll triggers untuk setiap konten
+        setTimeout(() => {
+            triggers = contentRefs.current.map((ref, i) => {
+                if (!ref) return null;
 
-            ScrollTrigger.create({
-                trigger: ref,
-                start: "top center",
-                end: "bottom center",
-                onEnter: () => setWeAre(WeAreContent[i].nama),
-                onEnterBack: () => setWeAre(WeAreContent[i].nama),
-                markers: true,
+                return ScrollTrigger.create({
+                    trigger: ref,
+                    start: "top center",
+                    end: "bottom center",
+                    onEnter: () => setWeAre(WeAreContent[i].nama),
+                    onEnterBack: () => setWeAre(WeAreContent[i].nama),
+                    markers: false,
+                });
+            }).filter(Boolean) as ScrollTrigger[];
+        }, 2000)
+
+        ScrollTrigger.refresh();
+
+
+
+        setTimeout(() => {
+            ScrollTrigger.refresh();
+
+            triggers.forEach((trigger, i) => {
+                if (trigger.isActive) {
+                    setWeAre(WeAreContent[i].nama);
+                }
             });
-        });
+        }, 100);
 
-        return () => ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
     }, []);
-
     return (
         <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white overflow-hidden">
-            <div className="sticky top-0 h-screen flex items-center justify-center px-5 sm:px-20">
-                <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <div className="sticky top-0 h-screen flex items-center justify-center px-5 md:px-20">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
                     {/* Tombol */}
-                    <div className="flex flex-col gap-5 text-xl sm:text-3xl z-10">
+                    <div className="flex flex-col gap-5 text-xl xl:text-3xl md:text-base  lg:text-xl z-10">
                         {WeAreContent.map((e, i) => (
                             <div key={i} className={`${i % 2 === 0 ? "" : "flex justify-end"}`}>
                                 <div
-                                    className={`cursor-pointer duration-300 ${weAre === e.nama ? "scale-110" : "opacity-50 scale-100"} sm:w-5/12 w-1/2 ${i % 2 === 0 ? "sm:rotate-3" : ""}`}
+                                    className={`cursor-pointer duration-300 ${weAre === e.nama ? "scale-125" : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
                                 >
                                     <div
-                                        className="w-full sm:py-7 py-4 flex justify-center items-center rounded-xl bg-[#00FFAD]"
+                                        className="w-full xl:py-7 py-4  flex justify-center items-center rounded-xl bg-[#00FFAD]"
                                     >
                                         {e.nama}
                                     </div>
                                     <div
-                                        className={`-translate-y-2 w-0 h-0 max-sm:hidden ${i % 2 === 0
+                                        className={`-translate-y-2 w-0 h-0 max-md:hidden ${i % 2 === 0
                                             ? "-rotate-6 float-right mr-10 border-l-[50px] border-r-[0px] border-t-[65px]"
                                             : "rotate-6 float-left ml-10 border-l-[0px] border-r-[50px] border-t-[65px]"
                                             } border-l-transparent border-r-transparent border-t-[#00FFAD]`}
@@ -85,10 +109,10 @@ const WeAre = () => {
                     </div>
 
                     {/* Deskripsi dinamis */}
-                    <div className="text-justify sm:p-10 text-xl sm:text-3xl max-sm:mt-10">
+                    <div className="text-justify md:p-10 lg:text-xl  md:text-base xl:text-3xl max-md:mt-10">
                         {
-                            WeAreContent.filter((e) => e.nama === weAre).map((e, index) => (
-                                <div key={index}>{e.deskripsi}</div>
+                            WeAreContent.map((e, index) => (
+                                <div key={index} className={`${e.nama === weAre ? " h-auto block opacity-100" : "h-0 opacity-0 -translate-y-10"} duration-1000`} >{e.deskripsi}</div>
                             ))
                         }
                     </div>

@@ -13,8 +13,8 @@ const About = () => {
     return (
         <section id='about' className=' bg-black'>
             <WeAre />
-            <FilosofiLogo />
-            <StrukturOrganisasi />
+            {/* <FilosofiLogo /> */}
+            {/* <StrukturOrganisasi /> */}
         </section>
     )
 }

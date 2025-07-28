@@ -10,7 +10,7 @@ const HeroSection = () => {
             <div className='absolute  translate-y-20 bg-gradient-to-b from-transparent via-40% via-transparent to-80% to-[#060606] bottom-0 h-1/2 z-50 w-full '>
             </div>
             <div className='absolute top-0 h-full w-full z-30 flex justify-center items-center'>
-                <Image alt='hero-img' className='object-cover brightness-75' fill src={"/hero.jpg"} />
+                <Image alt='hero-img' className='object-cover brightness-75' fill src={"/hero.avif"} />
                 <h1 className='relative z-50 xl:text-8xl text-6xl text-center mx-10 text-white'>CODING TOGETHER<br /> <span className='text-[#00FFAD]'> GROWING</span> FOR THE <span className='text-[#00FFAD]'>BETTER</span></h1>
             </div>
             <div className='absolute bottom-0 w-full  z-50 text-white px-20 lg:text-xl text-sm flex justify-between'>
