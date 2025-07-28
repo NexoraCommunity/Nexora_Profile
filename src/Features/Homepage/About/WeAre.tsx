@@ -109,7 +109,7 @@ const WeAre = () => {
                     </div>
 
                     {/* Deskripsi dinamis */}
-                    <div className="text-justify md:p-10 lg:text-xl  md:text-base xl:text-3xl max-md:mt-10">
+                    <div className="text-justify md:p-10 lg:text-xl  text-lg xl:text-3xl max-md:mt-10">
                         {
                             WeAreContent.map((e, index) => (
                                 <div key={index} className={`${e.nama === weAre ? " h-auto block opacity-100" : "h-0 opacity-0 -translate-y-10"} duration-1000`} >{e.deskripsi}</div>
