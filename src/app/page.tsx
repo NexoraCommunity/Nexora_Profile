@@ -11,8 +11,8 @@ const page = () => {
       <Navbar />
       <HeroSection />
       <About />
-      {/* <Portfolio />
-      <Gallery /> */}
+      <Portfolio />
+      {/* <Gallery /> */}
     </div>
   )
 }
