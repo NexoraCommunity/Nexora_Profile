@@ -52,7 +52,7 @@ export default function ResponsiveOrganizationChart() {
                 </div>
             </div>
             {/* Desktop and Tablet View */}
-            <div className="flex md:px-20 px-5 justify-between mt-20 items-end gap-2">
+            <div className="flex md:px-20 px-5 justify-between mt-20 items-end gap-2 max-sm:mx-4">
                 {positions.map((position, index) => (
                     <div key={index} className="flex gap-3 lg:gap-5">
                         <div className={`${position.height} w-8 lg:w-10 ${position.bgColor} transition-all duration-300 hover:scale-105`}></div>
