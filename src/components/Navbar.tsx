@@ -14,7 +14,7 @@ const Navbar = () => {
                         <Link href={'#home'} className='p-2 px-6 bg-white/10 backdrop-blur-lg rounded-3xl'>HOME</Link>
                         <Link href={'#about'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>TENTANG KAMI</Link>
                     </div>
-                    <h1 className='lg:mx-20 mx-5 max-lg:mt-2'>NEXORA<span className='text-[#56DFCF] '>.</span></h1>
+                    <h1 className='lg:mx-20 mx-1 max-lg:mt-2'>NEXORA<span className='text-[#56DFCF] '>.</span></h1>
                     <div className='flex gap-3 items-start w-96 max-lg:hidden'>
                         <Link href={'#faq'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>FAQ</Link>
                         <Link href={'#gallery'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>GALLERY</Link>
@@ -36,7 +36,7 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                <div className='absolute mt-6 right-10 z-0 top-0'>
+                <div className='absolute mt-6 right-5 sm:right-10 z-0 top-0'>
                     <button onClick={() => SetToggle(!Toggle)}><Image src={"/hamburger.png"} alt='oke' width={50} height={50} /></button>
                 </div>
             </div>

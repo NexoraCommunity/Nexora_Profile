@@ -82,9 +82,9 @@ const WeAre = () => {
         };
     }, []);
     return (
-        <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white overflow-hidden">
+        <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white max-sm:mt-40 overflow-hidden">
             <div className="sticky top-0 h-screen flex items-center justify-center px-5 md:px-20">
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
                     <div className="flex flex-col gap-5 text-xl xl:text-3xl md:text-base  lg:text-xl z-10">
                         {WeAreContent.map((e, i) => (
@@ -109,10 +109,10 @@ const WeAre = () => {
                     </div>
 
                     {/* Deskripsi dinamis */}
-                    <div className="text-justify md:p-10 lg:text-xl  text-lg xl:text-3xl max-md:mt-10">
+                    <div className="text-justify lg:text-xl  text-lg xl:text-3xl max-md:mt-10">
                         {
                             WeAreContent.map((e, index) => (
-                                <div key={index} className={`${e.nama === weAre ? " h-auto block opacity-100" : "h-0 opacity-0 -translate-y-10"} duration-1000`} >{e.deskripsi}</div>
+                                <div key={index} className={`${e.nama === weAre ? " h-auto block opacity-100 translate-y-0" : "h-0 opacity-0 translate-y-10"}  md:p-10 ease-in-out duration-1000 absolute`} >{e.deskripsi}</div>
                             ))
                         }
                     </div>
