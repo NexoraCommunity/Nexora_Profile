@@ -43,8 +43,9 @@ const WeAre = () => {
             start: "top top",
             end: "+=200%",
             pin: true,
-            scrub: false,
+            scrub: true,
             markers: false,
+            anticipatePin: 1,
         });
 
         // Scroll triggers untuk setiap konten
