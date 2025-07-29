@@ -1,10 +1,10 @@
 "use client"
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import React, { useEffect, useRef, useState } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 
-import React, { useEffect, useRef, useState } from 'react'
 
 const WeAreContent = [
     {
@@ -35,6 +35,8 @@ const WeAre = () => {
 
     useEffect(() => {
         if (!wrapperRef.current) return;
+        ScrollTrigger.normalizeScroll(true)
+
 
         let triggers: ScrollTrigger[] = []
         // Pin utama
@@ -83,7 +85,7 @@ const WeAre = () => {
         };
     }, []);
     return (
-        <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white max-sm:mt-40 overflow-hidden">
+        <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white  overflow-hidden">
             <div className="sticky top-0 h-screen flex items-center justify-center px-5 md:px-20">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
