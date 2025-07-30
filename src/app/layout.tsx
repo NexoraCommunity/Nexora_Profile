@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScrolling from "@/utils/Lenis";
 
 
 export const metadata: Metadata = {
@@ -17,9 +16,7 @@ export default function RootLayout({
     <html lang="en" data-theme="dark">
       <body
       >
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        {children}
       </body>
     </html>
   );
