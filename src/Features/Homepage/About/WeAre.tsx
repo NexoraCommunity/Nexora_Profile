@@ -23,15 +23,11 @@ const WeAreContent = [
 
 const WeAre = () => {
     const [weAre, setWeAre] = useState<string>("Tentang Kami")
-    const [fadeKey, setFadeKey] = useState(0)
 
     const wrapperRef = useRef<HTMLDivElement | null>(null)
     const contentRefs = useRef<(HTMLDivElement | null)[]>([])
 
 
-    useEffect(() => {
-        setFadeKey(prev => prev + 1)
-    }, [weAre])
 
     useEffect(() => {
         if (!wrapperRef.current) return;
@@ -39,13 +35,12 @@ const WeAre = () => {
 
 
         let triggers: ScrollTrigger[] = []
-        // Pin utama
         ScrollTrigger.create({
             trigger: wrapperRef.current,
             start: "top top",
             end: "+=200%",
             pin: true,
-            scrub: true,
+            scrub: false,
             markers: false,
             anticipatePin: 1,
         });
@@ -66,56 +61,58 @@ const WeAre = () => {
             }).filter(Boolean) as ScrollTrigger[];
         }, 2000)
 
-        ScrollTrigger.refresh();
 
 
 
-        setTimeout(() => {
-            ScrollTrigger.refresh();
-
-            triggers.forEach((trigger, i) => {
-                if (trigger.isActive) {
-                    setWeAre(WeAreContent[i].nama);
-                }
-            });
-        }, 100);
+        triggers.forEach((trigger, i) => {
+            if (trigger.isActive) {
+                setWeAre(WeAreContent[i].nama);
+            }
+        });
 
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
         };
     }, []);
+
     return (
-        <section ref={wrapperRef} id="we-are" className="relative w-full bg-black text-white  overflow-hidden">
-            <div className="sticky top-0 h-screen flex items-center justify-center px-5 md:px-20">
+        <section id="we-are" className="relative w-full bg-black text-white mt-40 overflow-hidden">
+            <div className=" flex items-center justify-center px-5 md:px-20">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
-                    <div className="flex flex-col gap-5 text-xl xl:text-3xl md:text-base  lg:text-xl z-10">
-                        {WeAreContent.map((e, i) => (
-                            <div key={i} className={`${i % 2 === 0 ? "" : "flex justify-end"}`}>
-                                <div
-                                    className={`cursor-pointer duration-300 ${weAre === e.nama ? "scale-125" : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
-                                >
+                    <div ref={wrapperRef} className="h-screen  max-md:absolute max-md:w-full  max-md:left-0 ">
+                        <div className='flex flex-col h-full max-md:mt-20 md:justify-center  gap-5 text-sm xl:text-3xl md:text-base  lg:text-xl'>
+                            {WeAreContent.map((e, i) => (
+                                <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : " justify-end"} flex`}>
                                     <div
-                                        className="w-full xl:py-7 py-4  flex justify-center items-center rounded-xl bg-[#00FFAD]"
+                                        className={`cursor-pointer  duration-300 ${weAre === e.nama ? "scale-125 " : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
                                     >
-                                        {e.nama}
+                                        <div
+                                            className="w-full xl:py-7 py-2  flex justify-center items-center rounded-xl bg-[#00FFAD]"
+                                        >
+                                            {e.nama}
+                                        </div>
+                                        <div
+                                            className={`-translate-y-2 w-0 h-0 max-md:hidden ${i % 2 === 0
+                                                ? "-rotate-6 float-right mr-10 border-l-[50px] border-r-[0px] border-t-[65px]"
+                                                : "rotate-6 float-left ml-10 border-l-[0px] border-r-[50px] border-t-[65px]"
+                                                } border-l-transparent border-r-transparent border-t-[#00FFAD]`}
+                                        ></div>
                                     </div>
-                                    <div
-                                        className={`-translate-y-2 w-0 h-0 max-md:hidden ${i % 2 === 0
-                                            ? "-rotate-6 float-right mr-10 border-l-[50px] border-r-[0px] border-t-[65px]"
-                                            : "rotate-6 float-left ml-10 border-l-[0px] border-r-[50px] border-t-[65px]"
-                                            } border-l-transparent border-r-transparent border-t-[#00FFAD]`}
-                                    ></div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
 
                     {/* Deskripsi dinamis */}
-                    <div className="text-justify lg:text-xl  text-lg xl:text-3xl max-md:mt-10">
+                    <div className="text-justify lg:text-xl  text-lg xl:text-3xl relative z-20 max-md:mt-10">
                         {
                             WeAreContent.map((e, index) => (
-                                <div key={index} className={`${e.nama === weAre ? " h-auto block opacity-100 translate-y-0" : "h-0 opacity-0 translate-y-10"}  md:p-10 ease-in-out duration-1000 absolute`} >{e.deskripsi}</div>
+                                <div className='h-screen flex items-center p-10 max-md:p-0' key={index}>
+                                    <p className='rounded-md '>
+                                        {e.deskripsi}
+                                    </p>
+                                </div>
                             ))
                         }
                     </div>
