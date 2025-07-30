@@ -5,7 +5,7 @@ function SmoothScrolling({ children }: Readonly<{
     children: React.ReactNode;
 }>) {
     return (
-        <ReactLenis root options={{ lerp: 0.1, duration: 1 }}>
+        <ReactLenis root className="bg-black text-white" options={{ lerp: 0.1, duration: 1 }}>
             {children}
         </ReactLenis>
     );
