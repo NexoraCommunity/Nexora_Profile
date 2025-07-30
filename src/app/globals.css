@@ -1,9 +1,10 @@
-@config "./tailwind.config.js";
+@import "daisyui/dist/full.css";
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@plugin "daisyui";
 
 
 @font-face {
