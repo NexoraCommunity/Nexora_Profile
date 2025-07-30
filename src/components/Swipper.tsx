@@ -1,16 +1,15 @@
-'use client'
+"use client";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/navigation';
-import Image from 'next/image';
+import "swiper/css";
+import "swiper/css/effect-cards";
+import "swiper/css/navigation";
+import Image from "next/image";
 
 // import required modules
-import { EffectCards, Navigation } from 'swiper/modules';
-
+import { EffectCards, Navigation } from "swiper/modules";
 
 export default function Swipper() {
   return (
@@ -20,31 +19,33 @@ export default function Swipper() {
           perSlideOffset: 60,
           perSlideRotate: 5,
           rotate: false,
-          slideShadows: true
-        }
-        }
-        effect={'cards'}
+          slideShadows: true,
+        }}
+        slidesPerView={1}
+        spaceBetween={10}
+        
+        effect={"cards"}
         grabCursor={true}
-        navigation={true}
+        navigation={false}
         modules={[EffectCards, Navigation]}
-        className="mySwiper lg:w-[600px] lg:h-[320px] md:w-[450px] md:h-[240px] sm:w-[300px] sm:h-[160px] w-[150px] h-[80px]"
+        className="mySwiper w-full max-w-[337px] h-[135px] sm:max-w-[450px] sm:h-[270px] lg:max-w-[600px] lg:h-[360px]"
       >
+        {/* lg:w-[600px] lg:h-[320px] md:w-[450px] md:h-[240px] sm:w-[300px] sm:h-[160px] w-[240px] h-[150px] */}
         <SwiperSlide>
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill />
+          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover"/>
         </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill />
+        <SwiperSlide>
+          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover"/>
         </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g2.jpg"} alt='g2' fill />
+        <SwiperSlide>
+          <Image src={"/sourceImg/g2.jpg"} alt="g2" fill className="object-cover"/>
         </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g3.jpg"} alt='g3' fill />
+        <SwiperSlide>
+          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover"/>
         </SwiperSlide>
-        <SwiperSlide >
-          <Image src={"/sourceImg/g4.jpg"} alt='g4' fill />
+        <SwiperSlide>
+          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover"/>
         </SwiperSlide>
-
       </Swiper>
     </>
   );

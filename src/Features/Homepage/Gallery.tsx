@@ -105,7 +105,7 @@ const Gallery = () => {
 
         <div className="relative my-36 px-20 overflow-x-clip">
           <Swipper />
-          <div className="relative z-50 text-center -translate-y-16 text-3xl shadow-inner">
+          <div className="max-sm:text-sm relative z-50 text-center -translate-y-16 text-3xl">
             <h1>TOUR KE MALAYSIA 2024/09/12</h1>
           </div>
         </div>
@@ -114,32 +114,26 @@ const Gallery = () => {
       <div className="px-20">
 
         <div className="text-white grid place-items-center py-12">
-          <h1 className="text-5xl text-center pb-12">
-            KELUARGA BESAR <br /> NEXORA
+          <h1 className="sm:text-5xl text-xl text-center pb-12">
+            KELUARGA BESAR <br className="max-sm:hidden"/> NEXORA
           </h1>
           <Image
             src={"/sourceImg/g4.jpg"}
             alt="g4"
             width={1000}
             height={500}
-            className="rounded-[30px]"
+            className="max-sm:rounded-[10px] rounded-[30px]"
           />
         </div>
 
-        <div className="text-white">
-          <h1 className="py-20 text-4xl">GUNAKAN BINGKAI NEXORA</h1>
+        <div className="text-white text-center">
+          <h1 className="md:py-20 text-xl sm:text-4xl">GUNAKAN BINGKAI NEXORA</h1>
         </div>
 
-        <div className="flex justify-around items-center py-20">
-          <h1 className="text-4xl">UNDUH BINGKAI</h1>
-          <div className="md:w-96 md:h-96 w-72 h-72 sm:w-60 sm:h-60 bg-white"></div>
+        <div className="flex max-sm:flex-col justify-around items-center max-sm:py-4 py-20">
+          <h1 className="text-lg md:text-4xl">UNDUH BINGKAI</h1>
+          <div className="md:w-96 md:h-96 w-64 h-64 sm:w-60 sm:h-60 bg-white"></div>
         </div>
-
-      </div>
-
-
-
-      <div>
 
       </div>
 
