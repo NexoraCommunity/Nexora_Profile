@@ -5,9 +5,7 @@ const Faq = () => {
         <div className='md:px-20 px-5 bg-black'>
             <div className='w-full text-5xl mb-5'>
                 <div className='mb-6'>
-
                     <h1 >FAQ</h1>
-                    <button className="btn btn-primary">DaisyUI Test</button>
                 </div>
                 <div className='w-full  border-white border-2'></div>
             </div>
