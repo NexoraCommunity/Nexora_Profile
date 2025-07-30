@@ -10,7 +10,7 @@ const Faq = () => {
                 </div>
                 <div className='w-full  border-white border-2'></div>
             </div>
-            <div className='md:text-3xl text-xl'>
+            <div className='md:text-3xl text-xl text-white'>
                 <div className="collapse collapse-arrow bg-transparent border rounded-none border-white">
                     <input type="radio" name="my-accordion-2" defaultChecked />
                     <div className="collapse-title">How do I create an account?</div>
