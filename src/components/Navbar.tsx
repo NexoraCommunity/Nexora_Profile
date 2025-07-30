@@ -7,7 +7,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 const Navbar = () => {
     const [Toggle, SetToggle] = useState(false)
     return (
-        <nav className='nav fixed flex justify-center w-full'>
+        <nav className='nav fixed max-lg:backdrop-blur-md flex justify-center w-full'>
             <div className='w-11/12  top-0 py-6  text-white  z-10 text-3xl  flex justify-between items-start mx-auto'>
                 <div className={`flex justify-between relative  flex-grow  items-center duration-1000`}>
                     <div className='flex gap-3 items-start w-96 max-lg:hidden'>
