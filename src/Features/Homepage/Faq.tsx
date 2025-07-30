@@ -7,6 +7,7 @@ const Faq = () => {
                 <div className='mb-6'>
 
                     <h1 >FAQ</h1>
+                    <button className="btn btn-primary">DaisyUI Test</button>
                 </div>
                 <div className='w-full  border-white border-2'></div>
             </div>
