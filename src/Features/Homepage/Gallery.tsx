@@ -103,9 +103,9 @@ const Gallery = () => {
 
         </div>
 
-        <div className="relative my-36 px-20 overflow-x-clip items-center">
+        <div className="relative my-36 px-20 overflow-x-clip">
           <Swipper />
-          <div className="max-sm:text-xl relative z-50 text-center -translate-y-16 text-3xl shadow-inner">
+          <div className="max-sm:text-sm relative z-50 text-center -translate-y-16 text-3xl">
             <h1>TOUR KE MALAYSIA 2024/09/12</h1>
           </div>
         </div>
@@ -130,9 +130,9 @@ const Gallery = () => {
           <h1 className="md:py-20 text-xl sm:text-4xl">GUNAKAN BINGKAI NEXORA</h1>
         </div>
 
-        <div className="flex max-sm:flex-col justify-between items-center max-sm:py-4 py-20">
+        <div className="flex max-sm:flex-col justify-around items-center max-sm:py-4 py-20">
           <h1 className="text-lg md:text-4xl">UNDUH BINGKAI</h1>
-          <div className="md:w-96 md:h-96 w-72 h-72 sm:w-60 sm:h-60 bg-white"></div>
+          <div className="md:w-96 md:h-96 w-64 h-64 sm:w-60 sm:h-60 bg-white"></div>
         </div>
 
       </div>
