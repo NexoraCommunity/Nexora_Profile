@@ -1,18 +1,21 @@
 import Navbar from '@/components/Navbar'
 import About from '@/Features/Homepage/About'
+import Faq from '@/Features/Homepage/Faq'
 import Gallery from '@/Features/Homepage/Gallery'
 import HeroSection from '@/Features/Homepage/HeroSection'
 import Portfolio from '@/Features/Homepage/Portfolio'
 import React, { useState } from 'react'
 
+
 const page = () => {
   return (
     <div className=' w-full bg-white text-white'>
-      {/* <Navbar />
+      <Navbar />
       <HeroSection />
       <About />
       <Portfolio /> */}
       <Gallery />
+      <Faq />
     </div>
   )
 }

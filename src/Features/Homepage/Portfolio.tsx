@@ -25,6 +25,7 @@ const Portfolio = () => {
 
     ];
     const hoverRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const imgRefs = useRef<(HTMLDivElement | null)>(null);
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
     const [positionImg, setPositionImg] = useState({ x: 0, y: 0 });
 
@@ -33,12 +34,14 @@ const Portfolio = () => {
         index: number
     ) => {
         const card = hoverRefs.current[index];
-        if (card) {
+
+        if (card && imgRefs.current) {
+
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
 
-            const clampedX = Math.min(x, rect.width - 302);
+            const clampedX = Math.min(x, rect.width - (imgRefs.current.clientWidth + 1));
             setPositionImg({
                 x: Math.max(0, clampedX),
                 y: y,
@@ -52,32 +55,23 @@ const Portfolio = () => {
     };
     return (
         <section className='bg-black  pt-40' id='portfolio'>
-            <div className='flex justify-center px-20 mx-auto gap-3'>
-                <div className='flex items-start relative -top-10'>
-                    <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
-                </div>
-                <h1 className='text-8xl text-center'>PROJECT <br />KAMI</h1>
-                <div className='flex items-end relative -bottom-10'>
-                    <Image src={"/Star 3.png"} alt='star 3' className='object-contain' width={120} height={120} />
-                </div>
-            </div>
-            <div className='px-20 pt-40'>
+            <div className='md:px-20 px-5 xl:text-5xl text-3xl pt-40'>
                 <div>
-                    <h1 className='text-5xl my-5'>HIGHLIGHT 2024//</h1>
-                    <iframe className='w-full h-[36rem]' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <h1 className='mb-20'>HIGHLIGHT 2024//</h1>
+                    <iframe className='w-full md:h-[36rem]' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
-                <div className='flex gap-10 mt-20'>
-                    <iframe className='w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                    <h1 className='text-5xl my-5'>HIGHLIGHT 2025//</h1>
+                <div className='flex max-lg:flex-col-reverse gap-10 mt-20'>
+                    <iframe className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <h1 className=' my-5'>HIGHLIGHT 2025//</h1>
                 </div>
-                <div className='flex gap-10 mt-20 justify-end'>
-                    <h1 className='text-5xl my-5'>HIGHLIGHT 2026//</h1>
-                    <iframe className='w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                <div className='flex max-lg:flex-col gap-10 mt-20 justify-end'>
+                    <h1 className='my-5'>HIGHLIGHT 2026//</h1>
+                    <iframe className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
             </div>
             <div className='border-t-8 border-white mt-40 h-screen'>
-                <h1 className='text-center text-7xl my-14'>MORE PROJECT?</h1>
-                <div className="text-4xl">
+                <h1 className='text-center xl:text-7xl lg:text-5xl text-3xl my-14'>MORE PROJECT?</h1>
+                <div className="xl:text-4xl text-xl">
                     {cards.map((e, i) => (
                         <div
                             key={i}
@@ -88,20 +82,25 @@ const Portfolio = () => {
                             onMouseLeave={handleMouseLeave}
                             className="border relative group  "
                         >
-                            <h1 className={`px-20  border-white duration-300 ${hoverIndex === i ? "py-20" : "py-10 "}`}>{e.title}</h1>
+                            <h1 className={`md:px-20 px-5 border-white duration-300 ${hoverIndex === i ? "md:py-20 py-10" : "md:py-10 py-5 "}`}>{e.title}</h1>
 
-                            <Image
-                                src={e.img}
-                                width={300}
-                                height={400}
-                                alt="hover-img"
+                            <div
                                 style={{
                                     left: `${positionImg.x}px`,
                                     top: `${positionImg.y}px`,
                                 }}
-                                className={`absolute transition-all z-40 duration-1000 -translate-y-10  ease-in-out ${hoverIndex === i ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                                ref={imgRefs}
+                                className={`absolute transition-all md:h-80 md:w-80 w-40 h-40  z-40 duration-1000 -translate-y-10  ease-in-out ${hoverIndex === i ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
                                     }`}
-                            />
+                            >
+                                <Image
+                                    src={e.img}
+                                    fill
+                                    alt="hover-img"
+                                    className='object-cover'
+
+                                />
+                            </div>
                         </div>
                     ))}
                 </div>
