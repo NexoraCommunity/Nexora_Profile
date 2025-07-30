@@ -4,7 +4,6 @@ import Faq from '@/Features/Homepage/Faq'
 import Gallery from '@/Features/Homepage/Gallery'
 import HeroSection from '@/Features/Homepage/HeroSection'
 import Portfolio from '@/Features/Homepage/Portfolio'
-import React, { useState } from 'react'
 
 
 const page = () => {

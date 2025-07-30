@@ -8,16 +8,21 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    "border-white",
-    "text-white",
-    "rounded-none",
+    "collapse",
+    "collapse-arrow",
+    "collapse-title",
+    "collapse-content",
     "bg-transparent",
-    "scale-0",
-    "scale-100",
-    "opacity-0",
-    "opacity-100",
-    "transform",
-    "duration-300",
+    "text-white",
+    "border-white",
+    "rounded-none",
+    "text-xl",
+    "md:text-3xl",
+    "text-5xl",
+    "md:px-20",
+    "px-5",
+    "mb-6",
+    "w-full",
   ],
   theme: {
     extend: {
@@ -28,6 +33,8 @@ module.exports = {
   },
   plugins: [require("daisyui")],
   daisyui: {
-    themes: false,
+    daisyui: {
+      themes: ["dark"],
+    },
   },
 };
