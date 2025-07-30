@@ -8,6 +8,10 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
+    "border-white",
+    "text-white",
+    "rounded-none",
+    "bg-transparent",
     "scale-0",
     "scale-100",
     "opacity-0",
@@ -23,4 +27,7 @@ module.exports = {
     },
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: false,
+  },
 };
