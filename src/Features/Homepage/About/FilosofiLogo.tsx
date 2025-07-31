@@ -8,10 +8,10 @@ const FilosofiLogo = () => {
         <>
             <div className='py-32'>
                 <div className='flex max-sm:flex-col-reverse gap-10  lg:px-20 md:px-10 px-5'>
-                    <div className='flex-grow relative h-72'>
+                    <div className='flex-grow relative h-60'>
                         <Image src={"/filosofilogo.png"} alt='img' className='object-cover' fill />
                     </div>
-                    <ul className='xl:text-4xl md:text-2xl  max-sm:text-3xl text-center text-white flex flex-col gap-8'>
+                    <ul className='xl:text-5xl md:text-2xl  max-sm:text-3xl text-center text-white flex flex-col gap-8'>
                         <motion.li
                             initial={{ x: -30 }}
                             animate={{ x: 30 }}
@@ -30,11 +30,11 @@ const FilosofiLogo = () => {
                     </ul>
                 </div>
                 <div className='flex max-sm:flex-col py-20 gap-8 relative'>
-                    <div className='h-full absolute -z-0 w-full top-2/3'>
-                        <div className='w-full h-full bg-black/80 absolute z-10'></div>
+                    <div className='h-full absolute -z-0 w-full top-1/2'>
+                        <div className='w-full h-full bg-black/60 absolute z-10'></div>
                         <Image src={"/hero.avif"} fill alt='bg' className='object-cover' />
                     </div>
-                    <div className='xl:text-5xl lg:text-4xl md:text-2xl sm:w-1/2  max-sm:text-3xl lg:px-20 md:px-10 px-5 relative z-0 text-white gap-8'>
+                    <div className='xl:text-4xl lg:text-4xl md:text-2xl sm:w-1/2  max-sm:text-3xl lg:px-20 md:px-10 px-5 relative z-0 text-white gap-8'>
                         <motion.h1
                             initial={{ opacity: 0, x: -100 }}
                             whileInView={{ opacity: 1, x: 0 }}
@@ -62,11 +62,11 @@ const FilosofiLogo = () => {
                             initial={{ opacity: 0, y: 100 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
-                            className='xl:text-4xl md:text-xl text-base text-justify mt-3'>
+                            className='xl:text-3xl md:text-xl text-base text-justify mt-3'>
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, nobis nostrum vitae dolorem praesentium placeat totam quia incidunt inventore consequatur! Deserunt vitae eveniet aliquam? Iusto dignissimos ullam ea quaerat natus.
                         </motion.p>
                     </div>
-                    <div className='flex-grow sm:w-1/2 px-20 relative xl:h-[486px] h-96 lg:mr-20 max-lg:mr-10 max-md:mx-5 rounded'>
+                    <div className='flex-grow sm:w-1/2 px-20 relative xl:h-[450px] h-96 lg:mr-20 max-lg:mr-10 max-md:mx-5 rounded'>
                         <Image src={"/nexoraff.png"} alt='img' className='object-cover' fill />
                     </div>
                 </div>
