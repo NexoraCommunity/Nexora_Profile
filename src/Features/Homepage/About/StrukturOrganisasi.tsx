@@ -69,7 +69,7 @@ export default function ResponsiveOrganizationChart() {
 
 
     return (
-        <div className="w-full pt-40">
+        <div className="w-full overflow-x-clip pt-40">
             <div className='flex justify-center mx-auto gap-3'>
                 <div className='flex items-start relative -top-10'>
                     <motion.span

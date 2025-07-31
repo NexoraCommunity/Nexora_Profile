@@ -76,14 +76,14 @@ const WeAre = () => {
     }, []);
 
     return (
-        <section id="we-are" className="relative w-full bg-black text-white mt-40 overflow-hidden">
+        <section id="we-are" className="relative w-full bg-black text-white mt-40">
             <div className=" flex items-center justify-center px-5 md:px-20">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
                     <div ref={wrapperRef} className="h-screen  max-md:absolute max-md:w-full  max-md:left-0 ">
                         <div className='flex flex-col h-full max-md:mt-24 md:justify-center  gap-5 text-sm xl:text-3xl md:text-base  lg:text-xl'>
                             {WeAreContent.map((e, i) => (
-                                <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : " justify-end"} flex`}>
+                                <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : "  justify-end"} flex`}>
                                     <div
                                         className={`cursor-pointer  duration-300 ${weAre === e.nama ? "scale-125 " : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
                                     >

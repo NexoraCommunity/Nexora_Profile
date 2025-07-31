@@ -56,7 +56,7 @@ const Portfolio = () => {
         setHoverIndex(null);
     };
     return (
-        <section className='bg-black  pt-40' id='portfolio'>
+        <section className='bg-black    pt-40' id='portfolio'>
             <div className='md:px-20 px-5 xl:text-5xl text-3xl pt-40'>
                 <div>
                     <motion.h1
@@ -82,7 +82,7 @@ const Portfolio = () => {
                         transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
                         className=' my-5'>HIGHLIGHT 2025//</motion.h1>
                 </div>
-                <div className='flex max-lg:flex-col gap-10 mt-20 justify-end'>
+                <div className='flex max-lg:flex-col  gap-10 mt-20 justify-end'>
                     <motion.h1
                         initial={{ opacity: 0, x: -100 }}
                         whileInView={{ opacity: 1, x: 0 }}
