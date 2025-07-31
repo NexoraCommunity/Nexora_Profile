@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import SmoothScrolling from "@/utils/Lenis";
 
 
 export const metadata: Metadata = {
@@ -14,12 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark">
       <body
       >
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        {children}
       </body>
     </html>
   );

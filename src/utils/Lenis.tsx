@@ -6,7 +6,9 @@ function SmoothScrolling({ children }: Readonly<{
 }>) {
     return (
         <ReactLenis root options={{ lerp: 0.1, duration: 1 }}>
-            {children}
+            <div className="bg-black text-white">
+                {children}x
+            </div>
         </ReactLenis>
     );
 }

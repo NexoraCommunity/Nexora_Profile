@@ -76,26 +76,26 @@ const WeAre = () => {
     }, []);
 
     return (
-        <section id="we-are" className="relative w-full bg-black text-white mt-40 overflow-hidden">
+        <section id="we-are" className="relative w-full bg-black text-white mt-40">
             <div className=" flex items-center justify-center px-5 md:px-20">
                 <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
                     <div ref={wrapperRef} className="h-screen  max-md:absolute max-md:w-full  max-md:left-0 ">
                         <div className='flex flex-col h-full max-md:mt-24 md:justify-center  gap-5 text-sm xl:text-3xl md:text-base  lg:text-xl'>
                             {WeAreContent.map((e, i) => (
-                                <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : " justify-end"} flex`}>
+                                <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : "  justify-end"} flex`}>
                                     <div
                                         className={`cursor-pointer  duration-300 ${weAre === e.nama ? "scale-125 " : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
                                     >
                                         <div
-                                            className="w-full xl:py-7 py-2  flex justify-center items-center rounded-xl bg-[#00FFAD]"
+                                            className="w-full xl:py-7 md:py-4 py-2  flex justify-center items-center md:rounded-xl rounded-l-xl bg-[#00FFAD]"
                                         >
                                             {e.nama}
                                         </div>
                                         <div
                                             className={`-translate-y-2 w-0 h-0 max-md:hidden ${i % 2 === 0
-                                                ? "-rotate-6 float-right mr-10 border-l-[50px] border-r-[0px] border-t-[65px]"
-                                                : "rotate-6 float-left ml-10 border-l-[0px] border-r-[50px] border-t-[65px]"
+                                                ? "-rotate-6 float-right xl:mr-10 mr-5 xl:border-l-[50px] xl:border-t-[65px] border-l-[45px] border-t-[50px] border-r-[0px]"
+                                                : "rotate-6 float-left xl:ml-10 ml-5 border-l-[0px] xl:border-r-[50px]  border-r-[45px] border-t-[50px] xl:border-t-[65px]"
                                                 } border-l-transparent border-r-transparent border-t-[#00FFAD]`}
                                         ></div>
                                     </div>

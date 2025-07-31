@@ -4,19 +4,20 @@ import Faq from '@/Features/Homepage/Faq'
 import Gallery from '@/Features/Homepage/Gallery'
 import HeroSection from '@/Features/Homepage/HeroSection'
 import Portfolio from '@/Features/Homepage/Portfolio'
-import React, { useState } from 'react'
+import SmoothScrolling from "@/utils/Lenis";
+
 
 
 const page = () => {
   return (
-    <div className=' w-full bg-white text-white'>
-      {/* <Navbar />
+    <SmoothScrolling>
+      <Navbar />
       <HeroSection />
       <About />
-      <Portfolio /> */}
+      <Portfolio />
       <Gallery />
-      {/* <Faq /> */}
-    </div>
+      <Faq />
+    </SmoothScrolling>
   )
 }
 
