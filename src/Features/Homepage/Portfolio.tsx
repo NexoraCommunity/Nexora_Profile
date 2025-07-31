@@ -57,7 +57,7 @@ const Portfolio = () => {
     };
     return (
         <section className='bg-black    pt-40' id='portfolio'>
-            <div className='md:px-20 px-5 xl:text-5xl text-3xl pt-40'>
+            <div className='md:px-20 px-5 pointer-events-none xl:text-5xl text-3xl pt-40'>
                 <div>
                     <motion.h1
                         initial={{ opacity: 0, x: -100 }}
