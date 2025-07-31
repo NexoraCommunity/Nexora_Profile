@@ -1,6 +1,8 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
+import { motion } from "motion/react"
+
 
 const Portfolio = () => {
     const cards = [
@@ -57,16 +59,40 @@ const Portfolio = () => {
         <section className='bg-black  pt-40' id='portfolio'>
             <div className='md:px-20 px-5 xl:text-5xl text-3xl pt-40'>
                 <div>
-                    <h1 className='mb-20'>HIGHLIGHT 2024//</h1>
-                    <iframe className='w-full md:h-[36rem]' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <motion.h1
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className='mb-20'>HIGHLIGHT 2024//</motion.h1>
+                    <motion.iframe
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className='w-full md:h-[36rem]' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></motion.iframe>
                 </div>
                 <div className='flex max-lg:flex-col-reverse gap-10 mt-20'>
-                    <iframe className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                    <h1 className=' my-5'>HIGHLIGHT 2025//</h1>
+                    <motion.iframe
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></motion.iframe>
+                    <motion.h1
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className=' my-5'>HIGHLIGHT 2025//</motion.h1>
                 </div>
                 <div className='flex max-lg:flex-col gap-10 mt-20 justify-end'>
-                    <h1 className='my-5'>HIGHLIGHT 2026//</h1>
-                    <iframe className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <motion.h1
+                        initial={{ opacity: 0, x: -100 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className='my-5'>HIGHLIGHT 2026//</motion.h1>
+                    <motion.iframe
+                        initial={{ opacity: 0, y: 100 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, type: "keyframes", delay: 0.3 }}
+                        className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></motion.iframe>
                 </div>
             </div>
             <div className='border-t-8 border-white mt-40 h-screen'>
