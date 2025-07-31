@@ -11,7 +11,6 @@ import SmoothScrolling from "@/utils/Lenis";
 const page = () => {
   return (
     <SmoothScrolling>
-
       <Navbar />
       <HeroSection />
       <About />
