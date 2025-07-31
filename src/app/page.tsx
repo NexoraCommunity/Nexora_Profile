@@ -10,12 +10,12 @@ import React, { useState } from 'react'
 const page = () => {
   return (
     <div className=' w-full bg-white text-white'>
-      <Navbar />
+      {/* <Navbar />
       <HeroSection />
       <About />
       <Portfolio /> */}
       <Gallery />
-      <Faq />
+      {/* <Faq /> */}
     </div>
   )
 }
