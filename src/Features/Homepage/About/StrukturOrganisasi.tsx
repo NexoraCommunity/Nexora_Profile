@@ -125,7 +125,7 @@ export default function ResponsiveOrganizationChart() {
 
     return (
         <div className="w-full overflow-clip pt-40">
-            <div ref={titleTrigger} className='flex justify-center mx-auto gap-3 pt-20'>
+            <div ref={titleTrigger} className='flex justify-center mx-auto gap-3 pt-40'>
                 <div ref={el1ref} className='flex items-start relative -top-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}

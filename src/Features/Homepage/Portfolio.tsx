@@ -113,7 +113,7 @@ const Portfolio = () => {
 
     return (
         <section className='bg-black    pt-40' id='portfolio'>
-            <div ref={titleTrigger} className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8 pt-20'>
+            <div ref={titleTrigger} className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8 pt-40'>
                 <div ref={el1ref} className='flex items-start relative text-[#00FFAD] -top-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}
