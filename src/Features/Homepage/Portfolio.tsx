@@ -1,6 +1,7 @@
 "use client"
 import React, { useRef, useState } from 'react'
 import Image from 'next/image'
+import { IoSettingsSharp } from "react-icons/io5"
 import { motion } from "motion/react"
 
 
@@ -57,6 +58,29 @@ const Portfolio = () => {
     };
     return (
         <section className='bg-black    pt-40' id='portfolio'>
+            <div className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8'>
+                <div className='flex items-start relative text-[#00FFAD] -top-10'>
+                    <motion.span
+                        initial={{ rotateZ: 0 }}
+                        animate={{ rotateZ: 360 }}
+                        transition={{ duration: 6, delay: 0.3, repeat: Infinity }}
+
+                    >
+                        <IoSettingsSharp />
+                    </motion.span>
+                </div>
+                <h1 className='text-center'>PROJECT</h1>
+                <div className='flex items-end relative  text-[#56DFCF]'>
+                    <motion.span
+                        initial={{ rotateZ: 0 }}
+                        animate={{ rotateZ: 360 }}
+                        transition={{ duration: 6, delay: 0.3, repeat: Infinity }}
+
+                    >
+                        <IoSettingsSharp />
+                    </motion.span>
+                </div>
+            </div>
             <div className='md:px-20 px-5 pointer-events-none xl:text-5xl text-3xl pt-40'>
                 <div>
                     <motion.h1
@@ -130,6 +154,9 @@ const Portfolio = () => {
                         </div>
                     ))}
                 </div>
+            </div>
+            <div className='h-screen w-full'>
+
             </div>
         </section>
     )
