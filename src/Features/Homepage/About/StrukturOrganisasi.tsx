@@ -1,6 +1,12 @@
+"use client"
 import { GoArrowUpRight } from "react-icons/go";
 import Image from "next/image";
 import { motion, easeOut } from "motion/react"
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect, useState, useRef, RefObject } from "react";
+import gsap from "gsap"
+gsap.registerPlugin(ScrollTrigger)
+
 
 const containerVariant = {
     hidden: {},
@@ -65,13 +71,62 @@ const positions = [
         isHighlighted: false
     }
 ];
+
+function scrollEffect(titleTrigger: RefObject<HTMLDivElement | null>
+) {
+    return {
+        trigger: titleTrigger.current,
+        start: "top-=50% center",
+        end: "bottom+=130% center",
+        scrub: true,
+    }
+}
 export default function ResponsiveOrganizationChart() {
+
+    const titleTrigger = useRef<HTMLDivElement>(null)
+    const el1ref = useRef<HTMLDivElement>(null)
+    const el3ref = useRef<HTMLDivElement>(null)
+    const el2ref = useRef<HTMLHeadingElement>(null)
+
+    const arrAnimation = [
+        {
+            target: el1ref,
+            y: -190,
+            delay: 0
+        },
+        {
+            target: el2ref,
+            y: -80,
+            delay: 1
+        },
+        {
+            target: el3ref,
+            y: -160,
+            delay: 0.3
+        },
+    ]
+
+    useEffect(() => {
+        if (!titleTrigger.current || !el1ref.current) return
+
+
+        arrAnimation.map((e) => {
+            if (!titleTrigger.current || !e.target) return
+
+            gsap.fromTo(e.target.current, { y: 0 }, {
+                y: e.y,
+                duration: 3,
+                delay: e.delay,
+                scrollTrigger: scrollEffect(titleTrigger),
+            })
+        })
+    }, [])
 
 
     return (
         <div className="w-full overflow-clip pt-40">
-            <div className='flex justify-center mx-auto gap-3'>
-                <div className='flex items-start relative -top-10'>
+            <div ref={titleTrigger} className='flex justify-center mx-auto gap-3 pt-20'>
+                <div ref={el1ref} className='flex items-start relative -top-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}
                         animate={{ rotateZ: 360 }}
@@ -81,8 +136,8 @@ export default function ResponsiveOrganizationChart() {
                         <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
                     </motion.span>
                 </div>
-                <h1 className='xl:text-8xl lg:text-6xl text-4xl text-center'>STRUKTUR <br />ORGANISASI</h1>
-                <div className='flex items-end relative -bottom-10'>
+                <h1 ref={el2ref} className='xl:text-8xl lg:text-6xl text-4xl text-center'>STRUKTUR <br />ORGANISASI</h1>
+                <div ref={el3ref} className='flex items-end relative -bottom-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}
                         animate={{ rotateZ: 360 }}

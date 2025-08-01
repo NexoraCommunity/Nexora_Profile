@@ -1,34 +1,51 @@
 "use client"
-import React, { useRef, useState } from 'react'
+import React, { RefObject, useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { IoSettingsSharp } from "react-icons/io5"
 import { motion } from "motion/react"
+import gsap from "gsap"
+gsap.registerPlugin(ScrollTrigger)
 
 
+const cards = [
+    {
+        title: "WEBSITE PERUSAHAAN",
+        img: "/nexoraff.png",
+        github: "",
+        preview: "",
+    },
+    {
+        title: "NEXORA PROFILE",
+        img: "/hero.avif",
+        github: "",
+        preview: "",
+    },
+    {
+        title: "AOKOKWOKOKAOK",
+        img: "/filosofilogo.png",
+        github: "",
+        preview: "",
+    },
+
+];
+
+function scrollEffect(titleTrigger: RefObject<HTMLDivElement | null>
+) {
+    return {
+        trigger: titleTrigger.current,
+        start: "top-=50% center",
+        end: "bottom+=130% center",
+        scrub: true,
+    }
+}
 const Portfolio = () => {
-    const cards = [
-        {
-            title: "WEBSITE PERUSAHAAN",
-            img: "/nexoraff.png",
-            github: "",
-            preview: "",
-        },
-        {
-            title: "NEXORA PROFILE",
-            img: "/hero.avif",
-            github: "",
-            preview: "",
-        },
-        {
-            title: "AOKOKWOKOKAOK",
-            img: "/filosofilogo.png",
-            github: "",
-            preview: "",
-        },
-
-    ];
     const hoverRefs = useRef<(HTMLDivElement | null)[]>([]);
     const imgRefs = useRef<(HTMLDivElement | null)>(null);
+    const titleTrigger = useRef<HTMLDivElement>(null)
+    const el1ref = useRef<HTMLDivElement>(null)
+    const el3ref = useRef<HTMLDivElement>(null)
+    const el2ref = useRef<HTMLHeadingElement>(null)
     const [hoverIndex, setHoverIndex] = useState<number | null>(null);
     const [positionImg, setPositionImg] = useState({ x: 0, y: 0 });
 
@@ -39,6 +56,7 @@ const Portfolio = () => {
         const card = hoverRefs.current[index];
 
         if (card && imgRefs.current) {
+
 
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -56,10 +74,47 @@ const Portfolio = () => {
     const handleMouseLeave = () => {
         setHoverIndex(null);
     };
+
+
+
+    const arrAnimation = [
+        {
+            target: el1ref,
+            y: -190,
+            delay: 0
+        },
+        {
+            target: el2ref,
+            y: -80,
+            delay: 1
+        },
+        {
+            target: el3ref,
+            y: -160,
+            delay: 0.3
+        },
+    ]
+
+    useEffect(() => {
+        if (!titleTrigger.current || !el1ref.current) return
+
+
+        arrAnimation.map((e) => {
+            if (!titleTrigger.current || !e.target) return
+
+            gsap.fromTo(e.target.current, { y: 0 }, {
+                y: e.y,
+                duration: 3,
+                delay: e.delay,
+                scrollTrigger: scrollEffect(titleTrigger),
+            })
+        })
+    }, [])
+
     return (
         <section className='bg-black    pt-40' id='portfolio'>
-            <div className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8'>
-                <div className='flex items-start relative text-[#00FFAD] -top-10'>
+            <div ref={titleTrigger} className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8 pt-20'>
+                <div ref={el1ref} className='flex items-start relative text-[#00FFAD] -top-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}
                         animate={{ rotateZ: 360 }}
@@ -69,8 +124,8 @@ const Portfolio = () => {
                         <IoSettingsSharp />
                     </motion.span>
                 </div>
-                <h1 className='text-center'>PROJECT</h1>
-                <div className='flex items-end relative  text-[#56DFCF]'>
+                <h1 ref={el2ref} className='text-center'>PROJECT</h1>
+                <div ref={el3ref} className='flex items-end relative  text-[#56DFCF]  -bottom-10'>
                     <motion.span
                         initial={{ rotateZ: 0 }}
                         animate={{ rotateZ: 360 }}
