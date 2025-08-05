@@ -96,9 +96,6 @@ const FilosofiLogo = () => {
                 <iframe className='w-full xl:h-screen pointer-events-none' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 <p className='text-white text-center py-10'>NEXORA - 2025 - COPYRIGHT ON</p>
             </div>
-            <div className='h-60 bg-white w-full pt-20'>
-
-            </div>
         </>
     )
 }

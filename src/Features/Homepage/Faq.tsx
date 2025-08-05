@@ -4,7 +4,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 
 const Faq = () => {
     return (
-        <div className='md:px-20 px-5 bg-black'>
+        <div className='md:px-20 px-5 my-40 bg-black'>
             <div className='w-full  text-5xl mb-5'>
                 <div className='flex mb-10 justify-between'>
                     <div className='flex items-center gap-10'>

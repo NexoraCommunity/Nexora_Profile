@@ -5,6 +5,7 @@ import React, { useState } from 'react'
 import WeAre from './About/WeAre'
 import FilosofiLogo from './About/FilosofiLogo'
 import StrukturOrganisasi from './About/StrukturOrganisasi'
+import Partnership from './About/Partnership'
 
 
 const About = () => {
@@ -14,6 +15,7 @@ const About = () => {
         <section id='about' className='w-full overflow-x-hidden bg-black'>
             <WeAre />
             <FilosofiLogo />
+            <Partnership />
             <StrukturOrganisasi />
         </section>
     )

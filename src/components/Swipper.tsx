@@ -23,28 +23,27 @@ export default function Swipper() {
         }}
         slidesPerView={1}
         spaceBetween={10}
-        
+
         effect={"cards"}
         grabCursor={true}
         navigation={false}
         modules={[EffectCards, Navigation]}
-        className="mySwiper w-full max-w-[337px] h-[135px] sm:max-w-[450px] sm:h-[270px] lg:max-w-[600px] lg:h-[360px]"
+        className="mySwiper w-full max-w-[337px] h-[200px] sm:max-w-[450px] sm:h-[270px] lg:max-w-[600px] lg:h-[360px]"
       >
-        {/* lg:w-[600px] lg:h-[320px] md:w-[450px] md:h-[240px] sm:w-[300px] sm:h-[160px] w-[240px] h-[150px] */}
         <SwiperSlide>
-          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover"/>
+          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover"/>
+          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={"/sourceImg/g2.jpg"} alt="g2" fill className="object-cover"/>
+          <Image src={"/sourceImg/g2.jpg"} alt="g2" fill className="object-cover" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover"/>
+          <Image src={"/sourceImg/g3.jpg"} alt="g3" fill className="object-cover" />
         </SwiperSlide>
         <SwiperSlide>
-          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover"/>
+          <Image src={"/sourceImg/g4.jpg"} alt="g4" fill className="object-cover" />
         </SwiperSlide>
       </Swiper>
     </>
