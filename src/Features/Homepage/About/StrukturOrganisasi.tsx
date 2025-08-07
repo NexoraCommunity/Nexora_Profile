@@ -38,37 +38,27 @@ const positions = [
     {
         title: "KETUA",
         height: "md:h-[28rem] sm:h-[20rem] h-[16rem]",
-        bgColor: "bg-[#00FFAD]",
-        textColor: "text-[#00FFAD]",
-        isHighlighted: true
+        img: "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "WAKIL KETUA",
         height: " md:h-[24rem] sm:h-[18rem] h-[14rem]",
-        bgColor: "bg-white",
-        textColor: "text-white",
-        isHighlighted: false
+        img: "https://images.unsplash.com/photo-1445053023192-8d45cb66099d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "SEKERTARIS",
         height: "md:h-[20rem] sm:h-[16rem] h-[12rem]",
-        bgColor: "bg-white",
-        textColor: "text-white",
-        isHighlighted: false
+        img: "https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "BENDAHARA",
         height: "md:h-[16rem] sm:h-[14rem] h-[10rem]",
-        bgColor: "bg-white",
-        textColor: "text-white",
-        isHighlighted: false
+        img: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
         title: "HUMAS",
         height: "md:h-[12rem] sm:h-[12rem] h-[8rem]",
-        bgColor: "bg-white",
-        textColor: "text-white",
-        isHighlighted: false
+        img: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     }
 ];
 
@@ -157,9 +147,12 @@ export default function ResponsiveOrganizationChart() {
                 {positions.map((position, index) => (
                     <motion.div
                         variants={itemVariant}
-                        key={index} className="flex gap-3 lg:gap-5">
-                        <div className={`${position.height} w-8 lg:w-10 ${position.bgColor} transition-all duration-300 hover:scale-105`}></div>
-                        <div className={`${position.textColor} flex sm:flex-col justify-start pb-2  max-sm:absolute max-sm:-translate-y-10`}>
+                        key={index} className="flex gap-3 lg:gap-5  group relative">
+                        <div className={`${position.height} w-8 lg:w-10 bg-white group-hover:bg-[#00FFAD]   transition-all duration-300`}></div>
+                        <div className="h-40 w-40 absolute group-hover:opacity-100 group-hover:-top-44 duration-1000 -top-0 opacity-0">
+                            <Image src={position.img} alt="img-struktur" fill className="object-cover" />
+                        </div>
+                        <div className={`flex sm:flex-col text-white group-hover:text-[#00FFAD] justify-start pb-2  max-sm:absolute max-sm:-translate-y-10`}>
                             <h1 className="text-xs lg:text-base font-bold mb-2 whitespace-nowrap">{position.title}</h1>
                             <GoArrowUpRight className="text-lg lg:text-xl hover:scale-110 transition-transform cursor-pointer" />
                         </div>

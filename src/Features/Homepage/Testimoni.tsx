@@ -4,7 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Testimoni = () => {
     return (
-        <div className='md:p-20 p-5 mb-40 '>
+        <div className='md:p-20 p-5 mb-40 relative z-40'>
             <div className='xl:text-7xl text-5xl flex gap-4'>
                 <h1>
                     TESTIMONY

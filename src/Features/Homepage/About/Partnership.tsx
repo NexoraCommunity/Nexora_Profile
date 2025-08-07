@@ -134,9 +134,9 @@ export default function Partnership() {
             <div className="mt-20 bg-white text-black p-10">
                 {directions.map((dir, i) => (
                     <Marquee key={i} direction={`${dir === "left" ? "left" : "right"}`} speed={50}>
-                        <div className="flex gap-10 w-screen justify-around  items-center">
+                        <div className="flex gap-10 w-screen justify-around my-3 items-center">
                             {partnershipList.slice(i * 4, i * 4 + 4).map((partner, index) => (
-                                <div key={index} className="w-40 h-40">
+                                <div key={index} className="w-40 relative h-40">
                                     <Image
                                         key={partner.name}
                                         className="object-contain"

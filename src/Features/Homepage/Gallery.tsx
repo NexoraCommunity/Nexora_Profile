@@ -1,12 +1,45 @@
-import React from "react";
+"use client"
+import React, { useLayoutEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
 import Swipper from "@/components/Swipper";
+
+gsap.registerPlugin(ScrollTrigger)
+
 const Gallery = () => {
+
+  const trigger = useRef<HTMLDivElement>(null)
+  const transition = useRef<HTMLDivElement>(null)
+
+
+  useLayoutEffect(() => {
+
+    const timeline = gsap.fromTo(transition.current, {
+      clipPath: " inset(0 0 0 0)",
+    }, {
+      clipPath: "inset(0 100% 0 0)",
+      scrollTrigger: {
+        trigger: trigger.current,
+        pin: true,
+        scrub: true,
+        start: "top end",
+        end: "top end-=200px",
+        markers: true,
+      }
+    });
+
+
+  }, [])
+
   return (
-    <div id="gallery" className="bg-black ">
+    <section ref={trigger} id="gallery" className="bg-black  z-40 relative">
       {/* Gallery 1 (Coding Fest) */}
-      <div className="text-white px-5 md:px-20 py-8 md:py-16 flex flex-col gap-4 max-sm:gap-10">
+      <div className="text-white px-5 md:px-20  py-8 md:py-16 flex flex-col gap-4 max-sm:gap-10 relative">
+        <div ref={transition} className='h-screen left-0 xl:text-8xl text-5xl text-black flex justify-center items-center bg-white z-50 w-full absolute top-0'>
+          <h1>Gallery</h1>
+        </div>
 
         <div className="order-1 md:order-2">
           <div className="md:text-4xl text-2xl flex justify-center items-center">
@@ -135,8 +168,11 @@ const Gallery = () => {
 
 
       </div>
+      <div className='h-96'>
 
-    </div>
+      </div>
+
+    </section>
   );
 };
 
