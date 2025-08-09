@@ -4,6 +4,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const Testimoni = () => {
     return (
+
         <div className='md:p-20 p-5 mb-40 relative z-40'>
             <div className='xl:text-7xl text-5xl flex gap-4'>
                 <h1>
@@ -11,15 +12,47 @@ const Testimoni = () => {
                 </h1>
                 <MdOutlineArrowOutward className='rotate-90 relative' />
             </div>
-            <div className='grid lg:grid-cols-2  mt-10 gap-4'>
-                <div className='h-screen  border border-white md:p-14 p-5 max-md:pb-10'>
-                    <div className='flex flex-col gap-4 h-2/3'>
-                        <div className='border border-white h-1/2  rounded-md'>
-
-                        </div>
-                        <div className='border border-white h-1/2  rounded-md'>
-
-                        </div>
+            <div className='grid lg:grid-cols-2 mt-10 gap-4'>
+                <div className='h-screen border border-white md:p-14 p-5 max-md:pb-10'>
+                    <div className='flex flex-col gap-4 h-2/3 overflow-y-scroll'>
+                        <div className='border border-white rounded-md h-auto p-4'>
+                            <div className='mb-4'>
+                                <h2 className='sm:text-2xl text-xl'>Comment</h2>    
+                            </div>
+                            <div>
+                                <div className='flex justify-between'> 
+                                    <div className='flex items-center'>
+                                        <div className='w-12 h-12 rounded-full bg-white'></div>
+                                        <h2 className='sm:text-xl text-xl mx-2'>Name</h2>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <h2>Bintang 5</h2>
+                                    </div>
+                                </div>
+                                <div className='text-justify'>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet obcaecati saepe, architecto odit reprehenderit animi.</p>
+                                </div>
+                            </div>
+                        </div>                        
+                        <div className='border border-white rounded-md h-auto p-4'>
+                            <div className='mb-4'>
+                                <h2 className='sm:text-2xl text-xl'>Comment</h2>    
+                            </div>
+                            <div>
+                                <div className='flex justify-between'> 
+                                    <div className='flex items-center'>
+                                        <div className='w-12 h-12 rounded-full bg-white'></div>
+                                        <h2 className='sm:text-xl text-xl mx-2'>Name</h2>
+                                    </div>
+                                    <div className='flex items-center'>
+                                        <h2>Bintang 5</h2>
+                                    </div>
+                                </div>
+                                <div className='text-justify'>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet obcaecati saepe, architecto odit reprehenderit animi.</p>
+                                </div>
+                            </div>
+                        </div>                        
                     </div>
                     <div className='h-1/3 mt-4 flex flex-col gap-4 text-black'>
                         <textarea name="" id="" className='h-2/3 resize-none bg-white border border-white p-3' placeholder='tulis disini!!'></textarea>
