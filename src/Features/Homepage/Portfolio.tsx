@@ -112,7 +112,7 @@ const Portfolio = () => {
     }, [])
 
     return (
-        <section className='bg-black    pt-40' id='portfolio'>
+        <section className='bg-black relative overflow-hidden  pt-40' id='portfolio'>
             <div ref={titleTrigger} className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8 pt-40'>
                 <div ref={el1ref} className='flex items-start relative text-[#00FFAD] -top-10'>
                     <motion.span
@@ -187,7 +187,7 @@ const Portfolio = () => {
                             onMouseLeave={handleMouseLeave}
                             className="border relative group  "
                         >
-                            <h1 className={`md:px-20 px-5 border-white duration-300 ${hoverIndex === i ? "md:py-20 py-10" : "md:py-10 py-5 "}`}>{e.title}</h1>
+                            <h1 className={`md:px-20 px-5 border-white duration-300 relative md:py-10 py-5 ${hoverIndex === i ? "scale-105 md:py-12 py-7" : "scale-100 md:py-10 py-5"}`}>{e.title}</h1>
 
                             <div
                                 style={{
@@ -209,9 +209,6 @@ const Portfolio = () => {
                         </div>
                     ))}
                 </div>
-            </div>
-            <div className='h-screen w-full'>
-
             </div>
         </section>
     )

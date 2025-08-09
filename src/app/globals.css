@@ -60,3 +60,13 @@ body {
   left: -200px !important;
   color: white !important;
 }
+
+
+
+.clip-path-close {
+  clip-path: inset(45% 51% 54% 50%);
+}
+
+.clip-path-open {
+  clip-path: inset(0 0 0 0);
+}

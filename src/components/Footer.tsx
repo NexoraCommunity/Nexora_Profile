@@ -4,8 +4,9 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <div className='grid mt-40 md:px-20 px-5 relative'>
-            <hr className=' bg-white absolute top-0 w-full left-0' />
+
+        <div className='grid mt-40 md:px-20 px-5 relative z-40'>
+            <hr className=' bg-white  absolute top-0 w-full left-0' />
             <div className="text-white mt-20">
                 <h1 className="md:py-20 text-xl sm:text-5xl text-center sm:text-left">GUNAKAN BINGKAI NEXORA</h1>
             </div>

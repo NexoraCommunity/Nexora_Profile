@@ -1,7 +1,7 @@
 "use client"
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import React, { useEffect, useRef, useState } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,12 +12,12 @@ const WeAreContent = [
         deskripsi: "Tentang kami ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur",
     },
     {
-        nama: "Berdirinya Nexora",
-        deskripsi: "Sejarah Kami dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur",
-    },
-    {
         nama: "Visi dan Misi",
         deskripsi: "Visi Misi Kami dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur",
+    },
+    {
+        nama: "Divisi",
+        deskripsi: "Divisi Kami dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur ipsum dolor sit amet consectetur, adipisicing elit. Pariatur rerum sed suscipit vel doloremque debitis placeat eligendi quos ab consequuntur",
     },
 ]
 
@@ -37,7 +37,7 @@ const WeAre = () => {
         let triggers: ScrollTrigger[] = []
         ScrollTrigger.create({
             trigger: wrapperRef.current,
-            start: "top top",
+            start: "top-=30px top",
             end: "+=200%",
             pin: true,
             scrub: true,
@@ -76,9 +76,9 @@ const WeAre = () => {
     }, []);
 
     return (
-        <section id="we-are" className="relative w-full bg-black text-white mt-40">
+        <section className="relative w-full bg-black text-white mt-40">
             <div className=" flex items-center justify-center px-5 md:px-20">
-                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                <div id="we-are" className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
                     <div ref={wrapperRef} className="h-screen  max-md:absolute max-md:w-full  max-md:left-0 ">
                         <div className='flex flex-col h-full max-md:mt-24 md:justify-center  gap-5 text-sm xl:text-3xl md:text-base  lg:text-xl'>
