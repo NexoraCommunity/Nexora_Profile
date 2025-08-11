@@ -20,7 +20,7 @@ const page = () => {
       <Gallery />
       <Testimoni />
       <Faq />
-      {/* <Footer /> */}
+      <Footer />
     </SmoothScrolling>
   )
 }
