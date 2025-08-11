@@ -7,9 +7,9 @@ import { IoIosArrowDown } from 'react-icons/io'
 const Navbar = () => {
     const [Toggle, SetToggle] = useState(false)
     return (
-        <nav className='nav fixed backdrop-blur-md flex justify-center w-full'>
-            <div className='w-11/12  top-0 py-6  text-white  z-10 text-3xl  flex justify-between items-start mx-auto'>
-                <div className={`flex justify-between relative  flex-grow  items-center duration-1000`}>
+        <nav className={`nav fixed flex justify-center w-full`}>
+            <div className='w-11/12 top-0 py-6 text-white z-10 xl:text-3xl lg:text-2xl max-lg:text-3xl flex justify-between items-start mx-auto'>
+                <div className={`flex justify-between relative flex-grow items-center duration-1000`}>
                     <div className='flex gap-3 items-start w-96 max-lg:hidden'>
                         <Link href={'#home'} className='p-2 px-6 bg-white/10 backdrop-blur-lg rounded-3xl'>HOME</Link>
                         <Link href={'#about'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>TENTANG KAMI</Link>
@@ -20,7 +20,7 @@ const Navbar = () => {
                         <Link href={'#gallery'} className='p-2 px-6 bg-white/10 backdrop-blur-lg  rounded-3xl'>GALLERY</Link>
                     </div>
                 </div>
-                <div className={`${Toggle ? " lg:w-96 w-full  lg:-right-5 opacity-100" : "w-0 h-0  -right-20 opacity-0"} ease-in-out lg:relative absolute   duration-300   max-lg:right-0 top-0 z-10    flex flex-col`}>
+                <div className={`${Toggle ? " lg:w-96 w-full lg:-right-5 opacity-100" : "w-0 h-0  -right-20 opacity-0"} ease-in-out lg:relative absolute duration-300 max-lg:right-0 top-0 z-10 flex flex-col`}>
                     <div className='w-full border relative flex items-center bg-black justify-center border-white text-5xl py-8'>
                         <h1>More</h1>
                         <button onClick={() => SetToggle(!Toggle)} className='absolute right-5'><IoIosArrowDown className={`${Toggle ? "rotate-0" : "rotate-180"} duration-700`} /></button>
@@ -40,8 +40,9 @@ const Navbar = () => {
                     <button onClick={() => SetToggle(!Toggle)}><Image src={"/hamburger.png"} alt='oke' width={50} height={50} /></button>
                 </div>
             </div>
-
+            <div className='absolute w-full h-24 backdrop-blur-md'></div>
         </nav>
+
     )
 }
 

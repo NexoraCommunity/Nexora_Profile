@@ -13,7 +13,7 @@ const Testimoni = () => {
                 <MdOutlineArrowOutward className='rotate-90 relative' />
             </div>
             <div className='grid lg:grid-cols-2 mt-10 gap-4'>
-                <div className='h-screen border border-white md:p-14 p-5 max-md:pb-10'>
+                <div className='h-screen border border-white xl:p-14 lg:p-8 p-5 max-md:pb-10 max-lg:order-2 order-1'>
                     <div className='flex flex-col gap-4 h-2/3 overflow-y-scroll'>
                         <div className='border border-white rounded-md h-auto p-4'>
                             <div className='mb-4'>
@@ -59,7 +59,7 @@ const Testimoni = () => {
                         <button className='w-full border h-1/3 bg-white  text-3xl'>submit</button>
                     </div>
                 </div>
-                <div className='lg:h-screen h-full flex flex-col gap-4'>
+                <div className='lg:h-screen h-full flex flex-col gap-4 max-lg:order-1 order-2'>
                     <div className='border border-white h-2/3 flex justify-center items-center'>
                         <Image src={"/logos.png"} width={400} height={400} alt='nexora-logos' />
                     </div>
