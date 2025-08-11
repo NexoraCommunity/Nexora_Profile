@@ -26,7 +26,6 @@ const Gallery = () => {
         scrub: true,
         start: "top end",
         end: "top end-=200px",
-        markers: true,
       }
     });
 
@@ -34,7 +33,7 @@ const Gallery = () => {
   }, [])
 
   return (
-    <section ref={trigger} id="gallery" className="bg-black  z-40 relative">
+    <section ref={trigger} id="gallery" className="bg-black z-40 relative">
       {/* Gallery 1 (Coding Fest) */}
       <div className="text-white px-5 md:px-20  py-8 md:py-16 flex flex-col gap-4 max-sm:gap-10 relative">
         <div ref={transition} className='h-screen left-0 xl:text-8xl text-5xl text-black flex justify-center items-center bg-white z-50 w-full absolute top-0'>
