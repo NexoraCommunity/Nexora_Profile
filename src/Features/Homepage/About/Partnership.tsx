@@ -116,7 +116,7 @@ export default function Partnership() {
                         transition={{ duration: 6, delay: 0.3, repeat: Infinity }}
 
                     >
-                        <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
+                        <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={120} height={120} />
                     </motion.span>
                 </div>
                 <h1 ref={el2ref} className='xl:text-8xl lg:text-6xl text-4xl text-center'>PARTNER <br />KAMI</h1>
@@ -131,7 +131,7 @@ export default function Partnership() {
                     </motion.span>
                 </div>
             </div>
-            <div className="mt-20 bg-white text-black p-10">
+            <div className="mt-20 bg-white text-black py-10">
                 {directions.map((dir, i) => (
                     <Marquee key={i} direction={`${dir === "left" ? "left" : "right"}`} speed={50}>
                         <div className="flex gap-10 w-screen justify-around my-3 items-center">

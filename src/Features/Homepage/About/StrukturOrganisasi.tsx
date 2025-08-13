@@ -123,7 +123,7 @@ export default function ResponsiveOrganizationChart() {
                         transition={{ duration: 6, delay: 0.3, repeat: Infinity }}
 
                     >
-                        <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={180} height={180} />
+                        <Image src={"/Star 2.png"} alt='star 2' className='object-contain' width={120} height={120} />
                     </motion.span>
                 </div>
                 <h1 ref={el2ref} className='xl:text-8xl lg:text-6xl text-4xl text-center'>STRUKTUR <br />ORGANISASI</h1>

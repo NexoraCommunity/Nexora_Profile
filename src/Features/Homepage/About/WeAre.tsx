@@ -38,10 +38,9 @@ const WeAre = () => {
         ScrollTrigger.create({
             trigger: wrapperRef.current,
             start: "top-=30px top",
-            end: "+=200%",
+            end: "+=210%",
             pin: true,
             scrub: true,
-            markers: false,
             anticipatePin: 1,
         });
 
@@ -80,12 +79,12 @@ const WeAre = () => {
             <div className=" flex items-center justify-center px-5 md:px-20">
                 <div id="we-are" className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
                     {/* Tombol */}
-                    <div ref={wrapperRef} className="h-screen  max-md:absolute max-md:w-full  max-md:left-0 ">
+                    <div ref={wrapperRef} className="h-screen z-50  max-md:absolute max-md:w-full  max-md:left-0 ">
                         <div className='flex flex-col h-full max-md:mt-24 md:justify-center  gap-5 text-sm xl:text-3xl md:text-base  lg:text-xl'>
                             {WeAreContent.map((e, i) => (
                                 <div key={i} className={`${i % 2 === 0 ? "md:justify-start  justify-end" : "  justify-end"} flex`}>
                                     <div
-                                        className={`cursor-pointer  duration-300 ${weAre === e.nama ? "scale-125 " : "opacity-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
+                                        className={`cursor-pointer  duration-300 ${weAre === e.nama ? "scale-125 brightness-100" : "brightness-50 scale-100"} md:w-5/12 w-1/2 ${i % 2 === 0 ? "md:rotate-3" : ""}`}
                                     >
                                         <div
                                             className="w-full xl:py-7 md:py-4 py-2  flex justify-center items-center md:rounded-xl rounded-l-xl bg-[#00FFAD]"

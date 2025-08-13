@@ -15,7 +15,7 @@ const containerVariant = {
 const FilosofiLogo = () => {
     return (
         <>
-            <div className='py-32'>
+            <div className='pb-32'>
                 <div className='flex max-sm:flex-col-reverse gap-10  lg:px-20 md:px-10 px-5'>
                     <div className='flex-grow relative h-60'>
                         <Image src={"/filosofilogo.png"} alt='img' className='object-cover' fill />

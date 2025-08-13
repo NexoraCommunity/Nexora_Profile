@@ -26,6 +26,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        marqueeDown: {
+          "0%": { transform: "translateY(-50%)" },
+          "100%": { transform: "translateY(0%)" },
+        },
+      },
+      animation: {
+        marqueeDown: "marqueeDown 10s linear infinite",
+      },
       colors: {
         mint: "#00FFAD",
       },

@@ -3,8 +3,12 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import Marquee from "react-fast-marquee";
 
+const comments = [
+  { name: "Name 1", text: "Lorem ipsum dolor sit amet consectetur adipisicing elit." },
+  { name: "Name 2", text: "Amet obcaecati saepe, architecto odit reprehenderit animi." },
+  { name: "Name 3", text: "Another comment example for scrolling." },
+];
 const Testimoni = () => {
   return (
     <div className="md:p-20 p-5 mb-40 relative z-40">
@@ -32,72 +36,53 @@ const Testimoni = () => {
       </div>
       <div className="grid lg:grid-cols-2 mt-10 gap-4">
         <div className="h-screen border border-white xl:p-14 lg:p-8 p-5 max-md:pb-10 max-lg:order-2 order-1">
-          <div className="flex flex-col gap-4 h-2/3 overflow-y-scroll">
-            <div className="border border-white rounded-md h-auto p-4">
-              <div className="mb-4">
-                <h2 className="sm:text-2xl text-xl">Comment</h2>
-              </div>
-              <div>
-                <div className="flex justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-white"></div>
-                    <h2 className="sm:text-xl text-xl mx-2">Name</h2>
+          <div className="relative h-2/3 overflow-hidden border border-white">
+            <div className="flex flex-col animate-marqueeDown gap-4 p-4">
+              {/* First set of comments */}
+              {comments.map((c, i) => (
+                <div key={`first-${i}`} className="border border-white rounded-md h-auto p-4">
+                  <div className="mb-4">
+                    <h2 className="sm:text-2xl text-xl">Comment</h2>
                   </div>
-                  <div className="flex items-center">
-                    <h2>Bintang 5</h2>
-                  </div>
-                </div>
-                <div className="text-justify">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Amet obcaecati saepe, architecto odit reprehenderit animi.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="border border-white rounded-md h-auto p-4">
-              <div className="mb-4">
-                <h2 className="sm:text-2xl text-xl">Comment</h2>
-              </div>
-              <div>
-                <div className="flex justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-white"></div>
-                    <h2 className="sm:text-xl text-xl mx-2">Name</h2>
-                  </div>
-                  <div className="flex items-center">
-                    <h2>Bintang 5</h2>
+                  <div>
+                    <div className="flex justify-between">
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 rounded-full bg-white"></div>
+                        <h2 className="sm:text-xl text-xl mx-2">{c.name}</h2>
+                      </div>
+                      <div className="flex items-center">
+                        <h2>Bintang 5</h2>
+                      </div>
+                    </div>
+                    <div className="text-justify">
+                      <p>{c.text}</p>
+                    </div>
                   </div>
                 </div>
-                <div className="text-justify">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Amet obcaecati saepe, architecto odit reprehenderit animi.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="border border-white rounded-md h-auto p-4">
-              <div className="mb-4">
-                <h2 className="sm:text-2xl text-xl">Comment</h2>
-              </div>
-              <div>
-                <div className="flex justify-between">
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-white"></div>
-                    <h2 className="sm:text-xl text-xl mx-2">Name</h2>
+              ))}
+
+              {/* Duplicate set for seamless scroll */}
+              {comments.map((c, i) => (
+                <div key={`second-${i}`} className="border border-white rounded-md h-auto p-4">
+                  <div className="mb-4">
+                    <h2 className="sm:text-2xl text-xl">Comment</h2>
                   </div>
-                  <div className="flex items-center">
-                    <h2>Bintang 5</h2>
+                  <div>
+                    <div className="flex justify-between">
+                      <div className="flex items-center">
+                        <div className="w-12 h-12 rounded-full bg-white"></div>
+                        <h2 className="sm:text-xl text-xl mx-2">{c.name}</h2>
+                      </div>
+                      <div className="flex items-center">
+                        <h2>Bintang 5</h2>
+                      </div>
+                    </div>
+                    <div className="text-justify">
+                      <p>{c.text}</p>
+                    </div>
                   </div>
                 </div>
-                <div className="text-justify">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Amet obcaecati saepe, architecto odit reprehenderit animi.
-                  </p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
           <div className="h-1/3 mt-4 flex flex-col gap-4 text-black">
