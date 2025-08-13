@@ -112,7 +112,7 @@ const Portfolio = () => {
     }, [])
 
     return (
-        <section className='bg-black relative overflow-hidden  pt-40' id='portfolio'>
+        <section className='bg-black relative overflow-hidden py-40' id='portfolio'>
             <div ref={titleTrigger} className='flex xl:text-9xl lg:text-7xl text-5xl  justify-center mx-auto gap-8 pt-40'>
                 <div ref={el1ref} className='flex items-start relative text-[#00FFAD] -top-10'>
                     <motion.span
@@ -174,7 +174,7 @@ const Portfolio = () => {
                         className='lg:w-1/2 h-96' src="https://www.youtube.com/embed/O8ivm7403rk?si=L4PYZiGnxg9UCJRM" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></motion.iframe>
                 </div>
             </div>
-            <div className='border-t-8 border-white mt-40 h-screen'>
+            <div className='border-t-8 border-white mt-40 h-auto'>
                 <h1 className='text-center xl:text-7xl lg:text-5xl text-3xl my-14'>MORE PROJECT?</h1>
                 <div className="xl:text-4xl text-xl">
                     {cards.map((e, i) => (
